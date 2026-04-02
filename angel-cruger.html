@@ -7,53 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos específicos para la ficha técnica (Infobox) de esta página */
         .wiki-infobox {
-            float: right;
-            width: 320px;
-            background-color: #f9f9f9;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            margin: 0 0 20px 30px;
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            float: right; width: 320px; background-color: #f9f9f9; border: 1px solid var(--border-color);
+            padding: 15px; margin: 0 0 20px 30px; font-family: sans-serif; font-size: 0.85rem;
+            border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         .wiki-infobox-title {
-            background-color: var(--primary-color); 
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background-color: var(--primary-color); color: white; text-align: center;
+            font-weight: bold; padding: 12px; margin-bottom: 15px; font-size: 1.2rem;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;
         }
-        .wiki-infobox img {
-            max-width: 100%; height: auto; display: block; margin: 0 auto 15px;
-            border-radius: 4px;
-        }
-        .wiki-infobox-row {
-            display: flex; border-bottom: 1px solid #eeeeee; padding: 10px 0;
-        }
+        .wiki-infobox img { max-width: 100%; height: auto; display: block; margin: 0 auto 15px; border-radius: 4px; }
+        .wiki-infobox-row { display: flex; border-bottom: 1px solid #eeeeee; padding: 10px 0; }
         .wiki-infobox-row:last-child { border-bottom: none; }
         .wiki-infobox-label { font-weight: bold; width: 40%; color: var(--text-main); }
         .wiki-infobox-data { width: 60%; color: var(--text-muted); }
         .wiki-infobox-data a { color: #0645ad; text-decoration: none; }
         .wiki-infobox-data a:hover { text-decoration: underline; }
-
-        .ref-list {
-            font-size: 0.9em; background: var(--bg-alt); padding: 25px;
-            border: 1px solid var(--border-color); border-radius: 8px; margin-top: 20px;
-        }
-        .ref-list li { margin-bottom: 15px; }
-
-        @media (max-width: 768px) {
-            .wiki-infobox { float: none; width: 100%; margin: 0 0 30px 0; box-sizing: border-box; }
-        }
+        .ref-list { font-size: 0.9em; background: var(--bg-alt); padding: 25px; border: 1px solid var(--border-color); border-radius: 8px; margin-top: 20px; }
+        .ref-list li { margin-bottom: 15px; word-wrap: break-word; }
+        .img-float-left { float: left; margin: 5px 25px 20px 0; max-width: 300px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .img-float-right { float: right; margin: 5px 0 20px 25px; max-width: 300px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        @media (max-width: 768px) { .wiki-infobox, .img-float-left, .img-float-right { float: none; width: 100%; max-width: 100%; margin: 0 0 30px 0; box-sizing: border-box; } }
     </style>
 </head>
 <body>
@@ -70,38 +45,26 @@
             <div class="wiki-infobox">
                 <div class="wiki-infobox-title">Angel Cruger</div>
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIUtOu-TP-Bx_YIsERA_jZmYDE4d-xwNxUrUpSLAWl9cKPoOFzAfEL3tYEV7CF4tlYq-PkpokNebruMftYOtk7ZVusU3W_foDPbziKRPTaecC5Ti3yE6VUT7lzO6Mu4ljI2jCZ3eBGuLB1SIeif0StKHyoiOL3H6kbm8Nvz53YhRHm5fCewb1YALMslg-9/w295-h516/Angel%20Cruger%20LA.jpeg" alt="Angel Cruger">
-                
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Nombre</div>
-                    <div class="wiki-infobox-data">Angel Cruger</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Ocupación</div>
-                    <div class="wiki-infobox-data">Artista conceptual, Ilustrador Digital, Investigador, Creador de contenido, CEO Cruger Corp.</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Proyectos</div>
-                    <div class="wiki-infobox-data">
-                        Angel Curiosidades, Cruger Corp, Universo GDM, Fundación DWS, ONESTUDIOS, EDC MEDIOS.
-                    </div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Seudónimo(s)</div>
-                    <div class="wiki-infobox-data">God, Devil and Me</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Nacionalidad</div>
-                    <div class="wiki-infobox-data">Mexicano</div>
-                </div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Nombre</div><div class="wiki-infobox-data">Angel Cruger</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Ocupación</div><div class="wiki-infobox-data">Artista conceptual, Ilustrador Digital, Investigador, Creador de contenido, CEO Cruger Corp.</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Proyectos principales</div><div class="wiki-infobox-data">Angel Curiosidades, Cruger Corp, Universo GDM, Fundación DWS, ONESTUDIOS, EDC MEDIOS.</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Seudónimo(s)</div><div class="wiki-infobox-data">God, Devil and Me</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Nacionalidad</div><div class="wiki-infobox-data">Mexicano</div></div>
             </div>
 
             <p><strong>Angel Cruger</strong>, es un artista conceptual, ilustrador digital y creador de contenido mexicano, fundador de la plataforma de divulgación <strong>Angel Curiosidades</strong> (anteriormente EDC EL DATO CURIOSO).</p>
-            
             <p>Con una trayectoria que inició en 2015, Cruger se ha destacado por la creación de contenido informativo, el diseño de personajes y la consolidación de una comunidad orgánica de decenas de miles de seguidores. Su carrera combina el arte y la comunicación en internet con estudios avanzados en ciencia de datos e ingeniería de sistemas a últimas fechas ya que se ha destapado un perfil que sorprendió a muchos.</p>
+            <p>Angel es ilustrador con una sólida carrera en diversas plataformas creativas, eso ayudó a formalizar el concepto en comunidades creativas en grupos de Facebook y en plataformas. Posee un estilo narrativo muy agudo, profundizando en temas sobre introspectiva, la mente y la conciencia llevado a sus obras como <em>Ryker, Arthelion, El guardián secreto</em> o <em>AURO</em>, una de las obras que más estuvo presente en grupos mientras compartía su progreso (antes de que se perdiera durante un evento que él mencionó como un hackeo).</p>
+            <p>Su creatividad lo llevó a formar una vasta comunidad donde comparte con sus seguidores a los que se les denomina ¨CURIOSOS¨. Esta comunidad actualmente a la fecha Dic-25 ronda los 32,000 seguidores. Cruger ha participado en eventos públicos como <strong>La Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC)</strong>.</p>
 
-            <p>Angel es ilustrador con una sólida carrera en diversas plataformas creativas. Posee un estilo narrativo muy agudo, profundizando en temas sobre introspectiva, la mente y la conciencia llevado a sus obras como <em>Ryker, Arthelion, El guardián secreto</em> o <em>AURO</em>, una de las obras que más estuvo presente en grupos mientras compartía su progreso (antes de que se perdiera durante un evento que él mencionó como un hackeo).</p>
-
-            <p>Su creatividad lo llevó a formar una vasta comunidad donde comparte con sus seguidores a los que se les denomina ¨<strong>CURIOSOS</strong>¨. Esta comunidad actualmente a la fecha Dic-25 ronda los 32,000 seguidores. Cruger ha participado en eventos públicos como la <strong>Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC)</strong>.</p>
+            <div style="background: var(--bg-alt); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); margin: 30px 0;">
+                <h3 style="margin-top: 0; font-size: 1.1rem;">Paginas oficiales:</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; font-family: monospace; font-size: 0.95rem;">
+                    <li style="margin-bottom: 10px;"><a href="https://www.CrugerCorp.com" target="_blank">https://www.CrugerCorp.com</a></li>
+                    <li style="margin-bottom: 10px;"><a href="https://www.facebook.com/AngelCuriosidadesOficial" target="_blank">https://www.facebook.com/AngelCuriosidadesOficial</a></li>
+                    <li><a href="https://AngelCuriosidades.Blogspot.com" target="_blank">https://AngelCuriosidades.Blogspot.com</a></li>
+                </ul>
+            </div>
 
             <div class="wiki-toc">
                 <h2>SUMARIO</h2>
@@ -112,68 +75,97 @@
                     <li><a href="#evolucion">4. Evolución a Angel Curiosidades (2025)</a></li>
                     <li><a href="#artistica">5. Faceta Artística</a></li>
                     <li><a href="#universo">6. Historias y Universo creativo</a></li>
-                    <li><a href="#ciberseguridad">7. Faceta científica: Ciberseguridad</a></li>
+                    <li><a href="#ciberseguridad">7. Faceta científica: El salto a la Ciberseguridad</a></li>
                     <li><a href="#personal">8. Vida personal</a></li>
-                    <li><a href="#fundacion">9. Fundación DWS</a></li>
+                    <li><a href="#fundacion">9. Campañas de apoyo a través de la Fundación DWS</a></li>
                     <li><a href="#publicaciones">10. Noticias y Publicaciones</a></li>
-                    <li><a href="#referencias">11. Referencias Académicas / Zenodo</a></li>
+                    <li><a href="#referencias">11. Referencias académicas / Zenodo</a></li>
+                    <li><a href="#busquedas">12. Referencias y búsquedas Google</a></li>
                 </ul>
             </div>
 
             <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="historia">Historia y Orígenes</h2>
-            <p>El proyecto principal de Cruger nació en 2015 bajo el nombre EDC El Dato Curioso. En una época donde las redes sociales se llenaban de páginas de entretenimiento con información inconsistente o falsa, Angel decidió fundar un espacio dedicado a compartir datos reales, verificados y estructurados. Durante sus primeros años, el creador también experimentó con otros formatos, fundando en 2016 <em>Rigathz</em>, una revista digital independiente enfocada en el periodismo y la cobertura de eventos.</p>
+            <p>El proyecto principal de Cruger nació en 2015 bajo el nombre EDC El Dato Curioso. En una época donde las redes sociales se llenaban de páginas de entretenimiento con información inconsistente o falsa (como la popular página "¿Sabías qué?"), Angel decidió fundar un espacio dedicado a compartir datos reales, verificados y estructurados. Durante sus primeros años, el creador también experimentó con otros formatos, fundando en 2016 <em>Rigathz</em>, una revista digital independiente enfocada en el periodismo y la cobertura de eventos de la comunidad gamer y otaku.</p>
 
             <h2 class="wiki-section-title" id="crecimiento">Crecimiento y la "Guerra Digital"</h2>
-            <p>Hacia 2019, la plataforma comenzó a definir su estilo propio y a profesionalizar su contenido. Entró en una competencia orgánica por la audiencia contra páginas gigantes de Facebook. Como respuesta, Cruger desarrolló formatos característicos como la serie "100 datos que no sabías de", lo que impulsó la página a alcanzar sus primeros 10,000 seguidores con un formato muy completo que algunos catalogaron de ¨demasiada información¨.</p>
-            <p>El proyecto se forjó a través de pausas forzadas y adversidades significativas, incluyendo el robo total de su equipo de trabajo en 2019 y un ciberataque masivo a finales de 2022 que destruyó sus unidades de almacenamiento principales. A pesar de esto, durante la pandemia, la plataforma experimentó su mayor auge logrando picos de audiencia que superaron los 2 millones de personas alcanzadas de forma orgánica.</p>
+            <p>Hacia 2019, la plataforma comenzó a definir su estilo propio y a profesionalizar su contenido. Durante este periodo, EDC entró en una competencia orgánica por la audiencia contra páginas gigantes de Facebook. Como respuesta, Cruger desarrolló formatos característicos, algunas de las páginas a las que se enfrentaron durante las primeras ¨guerras digitales¨ comenzaron a implementar formatos como la serie "100 datos que no sabías de", a manera de respuesta por el auge de captar más seguidores y visitas en redes sociales sobre todo en Facebook (cuando la plataforma no monetizaba a creativos) lo que impulsó la página a alcanzar sus primeros 10,000 seguidores con un formato característico y muy completo que algunos catalogaron de ¨demasiada información¨ pero que no te quedaba duda de que sabía la respuesta y que había investigación detrás, a finales de ese mismo año.</p>
+            
+            <p>Las secciones de la pagina suelen incluir temas diversos, entre ellos, comparte noticias importantes, misterio, temas tecnológicos, pero una de las secciones que mas le han gustado a sus seguidores suelen ser aquellas que narran viajes o anécdotas sobre mundos antiguos, por ello la imagen que acompaña este punto es la de ARABÍA una de las publicaciones que mas le gustaron a los usuarios de facebook. Angel suele compartir solo con comunidades de facebook, aunque en varias ocasiones ha intentado conectar con nuevas audiencias siempre regresa o mantiene mas activa la comunidad de facebook donde tiene grupos de paginas con miles de seguidores, uno de ellos relacionado directamente con Angel Curiosidades.</p>
+            
+            <p>El proyecto se forjó a través de pausas forzadas y adversidades significativas, incluyendo el robo total de su equipo de trabajo en 2019 y un ciberataque masivo a finales de 2022 que destruyó sus unidades de almacenamiento principales. A pesar de esto, durante la pandemia de 2020 y 2021, la plataforma experimentó su mayor auge al compartir notas verificadas sobre salud y actualidad, logrando picos de audiencia que superaron los 2 millones de personas alcanzadas de forma orgánica. La página enfrentó diversos periodos e incluso llegó a perder una parte de sus seguidores por incluir temas para agradar a una mayor audiencia como MEMES, chistes ocasionales, frases célebres, más variedad en temas como novedades, tecnologías, tendencias, actualidad, naturaleza, etc.</p>
 
             <h2 class="wiki-section-title" id="identidad">Identidad visual y Rainbow Red</h2>
-            <p>El universo se distingue fuertemente por su apartado visual, operado bajo el sello de su propia casa productora, ONESTUDIOS. El corazón visual de la marca es su mascota oficial: <strong>Rainbow Red</strong>. Este personaje ilustrado de estilo "Chibi" es el embajador del proyecto. El origen de "Red" se remonta a animaciones cuadro por cuadro creadas por Angel entre 2014 y 2016 para una micro serie titulada "Banco Guazteca".</p>
+            <p>El universo de Angel Curiosidades se distingue fuertemente por su apartado visual, operado bajo el sello de su propia casa productora, ONESTUDIO MULTIMEDIA. El corazón visual de la marca es su mascota oficial: Rainbow Red. Este personaje ilustrado de estilo "Chibi", caracterizado por su cabello rojo, ropa oscura y ojos de estrella, es el embajador del proyecto y protagoniza reacciones, plantillas y material didáctico. El origen de "Red" se remonta a animaciones cuadro por cuadro creadas por Angel entre 2014 y 2016 para una micro serie titulada "Banco Guazteca", donde el personaje era conocido inicialmente como "Angel Chibi". Tras múltiples rediseños, el personaje adoptó su forma definitiva como el rostro de la marca.</p>
 
             <h2 class="wiki-section-title" id="evolucion">Evolución a Angel Curiosidades (2025)</h2>
-            <p>En 2025, el proyecto evolucionó formalmente a <strong>Angel Curiosidades</strong> para evitar confusiones y reflejar una identidad mucho más personal. Actualmente ha diversificado su contenido bajo el eslogan "Mucho más que ver...", incluyendo infografías, humor y cápsulas audiovisuales.</p>
+            <p>En 2025, el proyecto abandonó el nombre "EDC El Dato Curioso" para evolucionar formalmente a Angel Curiosidades. Este cambio de marca buscó evitar confusiones con festivales de música electrónica y reflejar una identidad mucho más personal y directa con su creador. Actualmente, la comunidad principal supera los 30,000 seguidores y ha diversificado su contenido bajo el eslogan "Mucho más que ver...", incluyendo infografías, humor, recomendaciones de videojuegos y cápsulas audiovisuales. Además de Facebook, el proyecto mantiene archivo y presencia en plataformas como Blogger, TikTok, Instagram y YouTube.</p>
+            <p>Actualmente no mantiene mucha interacción con su comunidad, salvo por actualizaciones esporádicas, se llegaron a publicar promociones sobre apoyo a otros canales o ¨servicios profesionales de consultoría de redes sociales¨ que se ocuparon rápido y no se volvió a abrir nuevas fechas. Se sabe que varias paginas en diferentes plataformas de creadores emergentes surgieron por el apoyo o mentoría de Angel, algo que suele comentar ocasionalmente y que ha llegado a aparecer en comentarios dentro de publicaciones, sin embargo no se tiene una lista exacta con nombres.</p>
 
             <h2 class="wiki-section-title" id="artistica">Faceta Artística</h2>
-            <p>Cuenta con muchas publicaciones sobre ilustración digital y artes, así como historias con narrativa profunda. Angel suele comentar activamente en sus plataformas sobre algunos proyectos creativos en los que trabaja. Una de sus incursiones fue el cuento corto publicado en la UNRC (Universidad Nacional Rosario Castellanos) sobre una historia de un robot que termina en un mundo antiguo, guion que se presentó como <em>Las Crónicas de Arthelion</em>.</p>
-            <p>Cuenta con ilustraciones entre las que destaca <em>Arcángel Miguel sometiendo al Diablo</em>, una pieza que refleja su faceta de evolución. Su estilo Gótico y de Fantasía oscura lo lleva a acumular una comunidad de seguidores que buscan historias fuera de lo convencional.</p>
+            <p>Cuenta con muchas publicaciones sobre ilustración digital y artes, así como historias con narrativa profunda. Angel suele comentar activamente en sus plataformas principalmente en Facebook sobre algunos proyectos creativos en los que trabaja, sin embargo, muchos critican la falta de transparencia sobre la continuidad de los proyectos o las versiones de muestra que solo aparecen por poco tiempo publicadas. Angel suele ser muy cauteloso con eso, una de sus más recientes incursiones fue el cuento corto publicado según compañeros de facultad en la UNRC (Universidad Nacional Rosario Castellanos) sobre una historia de un robot que termina en un mundo antiguo y que muchos lo consideran una armadura embrujada, esta historia se fue puliendo hasta convertirse en un guion formal que se presentó como <em>Las Crónicas de Arthelion</em>, sin embargo, pese a existir información sobre la historia o sobre un capítulo cero, no se ha continuado con su publicación.</p>
+            <p>Esto molesta a sus seguidores quienes quieren contenidos continuos, Angel suele mantener un perfil bajo en cuanto a serializaciones, lo mismo ocurrió con <em>Ryker entre dos mundos, El guardián secreto, El veneno más hermoso</em>, la mini serie sobre su propia caricatura RED RAINBOW (mascota de Angel Curiosidades en estilo chibi) aunque se ha mencionado trabajar en un ArtBook recopilatorio para compensar a sus fans.</p>
+            
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBQnePslWxdoTlkoYbeqxmHPQWtufXyyO4B6wkdrZie5Jf5RbGMLekJxOOkkzP31UFdStemf1eNlUu-qguB31MSYKUhPsfHOU_rWXdbnhiAWKWKW7OX4n0KT5e8NEIXMEagrEdZffePKmZEfZ3cYYZZPrCcoJaf3-NIvdLD8IkUambSDTEZS2YWyV3oKU0/w268-h414/angel-cruger-20220405-002054.jpg" alt="Arcángel Miguel" class="img-float-left">
+            <p>Cuenta con muchas ilustraciones entre las que destaca <em>Arcángel Miguel sometiendo al Diablo</em>, una pieza ilustrativa que refleja su faceta de evolución a través de los años ya que es una reinterpretación de una versión presentada en 2017. Su estilo Gótico y de Fantasía oscura lo lleva a acumular una comunidad de seguidores que buscan historias fuera de lo convencional. Una de las que más se publicó en redes sociales fue <em>Auro</em> aunque no se concluyó y contaba con muchos errores de edición, este trabajo ayudó a consolidarlo como artista y narrador de historias con profundidad en los personajes.</p>
+
+            <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="universo">Historias y Universo creativo</h2>
-            <p>Las historias de Angel suelen tener un trasfondo filosófico fuerte. Dentro de las historias que ha desarrollado en su <strong>UNIVERSO GDM</strong> (God, Devil and Me):</p>
+            <p>Las historias de Angel suelen tener un trasfondo filosófico fuerte, y se caracterizan por ser fantasía oscura y temas futuristas. Dentro de las historias que ha desarrollado en su UNIVERSO GDM (God, Devil and Me seudónimo que suele usar en su faceta creativa aunque ha optado por firmar sus obras después simplemente como Angel Cruger y sigue siendo el nombre de su página en Facebook sobre temas de ilustración y proyectos artísticos) destacan:</p>
             <ul>
-                <li><em>Auro</em> en sus diferentes versiones (Untold, Legends, The last Aurian´s).</li>
-                <li><em>The Secret Guardian</em> (Rebautizado como El guardián secreto, Las crónicas de Allius).</li>
-                <li><em>Ryker entre dos mundos.</em></li>
-                <li><em>Las Crónicas de Arthelion.</em></li>
+                <li><em>Auro (Untold, Legends, The last Aurian´s):</em> Una historia incompleta que trata sobre un ser que ve cómo su planeta es consumido por una raza alienígena. La historia narra la soberbia del planeta SABDOM, quienes sometían a su voluntad a otras razas, sin embargo, estaban en un planeta que agonizaba. La solución se presentó de manera extraña y fortuita cuando una raza alienígena se ofreció a ayudar al planeta, pero solo querían liberar a un antiguo mal que estaba prisionero en la fortaleza del IFROS (buscaban a un ser cuyo nombre cambió con cada edición, el que más se mantuvo fue Zadfadakiel, Shalom, Zadkiel).</li>
+                <li><em>The Secret Guardian (El guardián secreto, Las crónicas de Allius):</em> La historia narra una aventura personal que le ocurre a un joven llamado Allius, quien vive en un pequeño pueblo dentro de un bosque. Allius debe enfrentar una batalla personal y una transición a nuevos retos que lo llevarán a enfrentar su propia naturaleza. En el primer capítulo se encuentra con un ser en un lago que resulta ser una bruja atrapada en un sello antiguo y, por accidente, él la termina liberando. Se encuentra con una joven que le acompañará en su aventura; ella está en una ciudad cercana al bosque, junto a un joven quien al parecer, de forma paralela, está reclutando gente para derrocar a una gobernante llamada La pequeña reina roja.</li>
+                <li><em>Ryker entre dos mundos:</em> Ryker es el hijo del Rey Demonio, que vive en el Inframundo/Infierno. Debe enfrentar las terribles consecuencias de ser el hijo de un regente infernal y solo contará con un aliado: Stolas, su gran guardián y amigo. Ryker abandonará el reino de su padre para enfrentarse a los peligros del infierno en búsqueda de lograr atravesar al mundo de los humanos. Su padre lo explota debido a que él es el único capaz de despertar un poder antiguo de las leyendas, y con ello abrir un portal entre ambos mundos. No hay más información al respecto pero se sabe que cuenta con un capítulo #0, #1 y #2.</li>
+                <li><em>Las Crónicas de Arthelion:</em> Se centran principalmente en un reino antiguo que desde el primer momento recibe la inesperada visita de una armadura que se mueve, camina y habla de una manera muy extraña, por lo que muchos consideran que se trata de magia negra o algo hechizado. Para los lectores es más que claro, a través de las imágenes, que se trata de un robot que intenta explicar eso en el mundo antiguo. Esto despierta las antiguas leyendas que hablaban sobre avistamientos de extraños seres en diferentes lugares y podría ser la clave para salvar de la crisis al reino. Aquí el autor se introduce directamente en la historia al nombrar a su personaje Angel y usar el modelo de su personaje Red Rainbow en un estilo más animado.</li>
             </ul>
-            <p><strong>ARTBOOK:</strong> Esta colección detalla un avance de preservación y un intento por recuperar datos de historias perdidas. Incluye ilustraciones inéditas, avances de nuevos proyectos, historias como <em>El veneno más hermoso</em> y <em>UNREAL´S</em>, una historia futurista y Cyberpunk sobre androides sintientes y la megalópolis de INFINITY CITY.</p>
+            
+            <p>Cuenta con ilustraciones seriadas sobre diferentes colecciones, así como versos y cuentos cortos que terminaron siendo otras historias, como <em>El veneno más hermoso</em> o <em>Arlift Adees In the Hell</em> (rebautizado como <em>El infierno de Arlifth</em>, una historia muy oscura sobre el hermano de Auro y como una narrativa de una pequeña tropa ligada al ex-príncipe de las legiones de SABDOM marcada por traición termina siendo un cuento fascinante y crudo sobre la guerra). Esta última historia cambió muchas veces sus cuadros hasta centrarse en los personajes secundarios; es a través de un escrito en tercera persona como se lee la historia.</p>
+            <p><em>Final End´s Un mundo en Guerra</em> es una historia sobre la colección de ilustraciones de Ángeles Legendarios. Narra el principio de una de las batallas más detalladas de su colección, y el principio de uno de los seres más enigmáticos de sus series de cartas ZERITH. La historia es corta y se sabe que entró en una edición y curación de datos para incluirlo en el ARTBOOK que el Autor mencionó estar trabajando.</p>
+
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjyaWkuMFnpy0b5oPloD9nuUH7lAm-iMipE4hw5UkqkLqo7Wdy-hJdf4F6pmKlEHt2muhhLZe1HR-gMIvBNCTh9-piIlrIVNxf0Y0Hr_3XkRAhVGwH4qcZerlJbiQQ_C21pFPwlztY7LcQBb3y4CM_mxBjnTWJqkDQ_4y09U4rBNpAO4yfaBJlIrgUcF8ba=w231-h301" alt="Artbook" class="img-float-left">
+            <p><strong>ARTBOOK:</strong> Esta colección detalla, según la propia página de God, Devil and Me, un avance de preservación y un intento por recuperar datos de historias perdidos, continuarlos o cerrarlos de manera digna. Incluye, por lo que se ha mencionado, ilustraciones inéditas, avances de nuevos proyectos, historias como <em>El veneno más hermoso</em> o <em>Mi encuentro con la Bestia</em>, e incluso se menciona una de las más esperadas por los seguidores: <em>UNREAL´S</em>, una historia futurista y Cyberpunk. Su trama indica tratarse de la próxima generación de androides conocidos como los UNREAL´S o SINTIENTES, creados por la CORPORACIÓN. Sin embargo, despertarían la bajeza de la humanidad y estarían al borde de la extinción; sin derechos que los protejan, un grupo de rebeldes luchan en las sombras contra la CORPORACIÓN ya que se cree que experimentan con humanos. Uno de sus experimentos ha escapado y ahora se encuentra oculto en la megalópolis de INFINITY CITY.</p>
+
+            <div style="clear: both;"></div>
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi3t4XuNNfI502OZOqlaihP8ye8Lx0ZRHRkQyEfeOvJ0-TPDQYfUMiEo66lF1lxxTt77mqbH9vPQL5qruCHi7erqezWZKbuKqgSgZzSWId38uOXmNOY8_Dx1H_Kp1vgXyUm2LrQijcfSGRw-AzK7FpD5sNLFE_FyiyJEbHJdMbiC4fb8FQdvWtFJwdHT_-C" alt="Final Ends TCG" class="img-float-right" style="max-width: 350px;">
+            <p><strong>FINAL END´S TCG:</strong> Angel trabajó hace varios años el concepto de un juego de cartas y se sabe que existen imágenes referentes a diferentes partes del juego con mecánicas de combate, aunque después simplemente se simplificaron a mostrar las ilustraciones más recientes a manera de cartas TCG muy detalladas.</p>
+            <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="ciberseguridad">Faceta científica: El salto a la Ciberseguridad</h2>
-            <p>La rigurosidad adquirida durante años de investigación documental llevó a Angel Cruger a profundizar académicamente en las ciencias exactas. Acumulando más de 100 certificaciones, cinco diplomados en Inteligencia de Negocios y Big Data, y una Especialidad Operativa en Tratamiento de Datos. Este conocimiento derivó en la fundación de <strong>Cruger Corp</strong>, donde Angel aplica sus metodologías en el diseño de arquitecturas algorítmicas y protocolos de defensa militar, como el Dark Zone Titanium.</p>
+            <p>La rigurosidad adquirida durante años de investigación documental  y capacitación teórica/practica llevó a Angel Cruger a profundizar académicamente en las ciencias exactas. Acumulando más de 100 certificaciones, cinco diplomados en áreas como Inteligencia de Negocios y Big Data, y una Especialidad Operativa en Tratamiento de Datos, su perfil creativo evolucionó hacia la ingeniería de sistemas. Este conocimiento técnico derivó en la fundación de Cruger Corp, una firma tecnológica donde Angel aplica sus metodologías de investigación en el diseño de arquitecturas algorítmicas y protocolos de defensa militar, como el Dark Zone Titanium. Esta faceta cierra el círculo de su perfil polímata, uniendo la comunicación visual con la ciberseguridad, y llevándolo a publicar investigaciones formales en repositorios de ciencia abierta.</p>
+            <p>Según su página de Curiosidades en Facebook donde comenzó a compartir temas de sus proyectos actuales sobre Movail, PMS y su nueva empresa Cruger Corp. En la página de Cruger Corp se puede encontrar la información sobre EL FUNDADOR en donde se detallan aspectos clave en la información de esta sección.</p>
 
             <h2 class="wiki-section-title" id="personal">Vida personal</h2>
-            <p>Se le suele encasillar como un INFLUENCER, sin embargo, su faceta es más la de un divulgador de conocimiento. Es muy reservado en cuanto a su vida privada, no se le conoce pareja o situación sentimental. Angel mantiene alejada a la gente de su vida privada, centrando toda comunicación solamente en sus proyectos y responde a través de plataformas oficiales o comunicados de medios.</p>
+            <p>Actualmente ha pasado a temas más serios sobre tecnologías y desarrollos que estuvo realizando durante años de fondo y en paralelo a su faceta como creativo aunque daba indicios sobre desarrollo y temas técnicos, tomó por sorpresa a su comunidad sobre el salto a temas más serios. Se le suele encasillar como un INFLUENCER sin embargo su faceta es más la de un divulgador de conocimiento ya que no busca exponer su vida en general, es muy reservado en cuanto a su vida privada, no se le conoce pareja o situación sentimental aunque se le llegó a relacionar con una figura conocida en el medio artístico esto no se logró confirmar (se dice que circularon fotografías que terminaron por desmentirse lo cual aumentó la curiosidad de los seguidores de su página).</p>
+            <p>Angel mantiene alejada a la gente de su vida privada, centrando toda comunicación solamente en sus proyectos. Actualmente responde a través de plataformas oficiales o comunicados de medios (terceros).</p>
 
-            <h2 class="wiki-section-title" id="fundacion">Campañas de apoyo (Fundación DWS)</h2>
-            <p>Angel Cruger mantiene una modesta fundación de apoyo ocasional llamada <strong>Dreams With Soul (Fundación DWS)</strong> autofinanciada, la cual opera de manera autónoma. Su campaña más reciente concluyó en diciembre de 2025 apoyando con la donación de equipos médicos (nebulizadores y aparatos auditivos) a personas vulnerables.</p>
+            <h2 class="wiki-section-title" id="fundacion">Campañas de apoyo a través de la Fundación DWS</h2>
+            <p>Angel Cruger mantiene una modesta fundación de apoyo ocasional llamada Dreams With Soul (Sueños con Alma) autofinanciada, la cual opera de manera autónoma, la ultima campaña concluyo de manera oficial el 26 de Diciembre de 2025 la Fundación DWS anuncio junto a Angel Curiosidades en la pagina oficial AC el cierre de la ultima campaña (más reciente) sobre apoyo de donación de equipos médicos (dispositivos médicos que no requieren permisos o receta medica) los cuales eran Nebulizadores portátiles y Aparatos auditivos (solo dispositivos). La campaña buscaba apoyar de manera directa a personas que los necesitaran, ya sea adultos mayores o niños y adolescentes.</p>
 
             <h2 class="wiki-section-title" id="publicaciones">Noticias y Publicaciones</h2>
             <ul>
-                <li>Participó en La Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC).</li>
-                <li>Invitado a colaborar en espacios creativos de videojuegos INDIE.</li>
-                <li>Colaboración en la Revista de publicación digital en Chile SAPO, versión GRAPH No. 1.</li>
+                <li>Angel participó en La Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC).</li>
+                <li>Ha sido invitado a colaborar en espacios creativos como invitado en videojuegos INDIE aunque él mismo ha asegurado negarse por el contenido explícito de algunos proyectos o que no se alinea con su visión creativa.</li>
+                <li>En 2020 fue invitado a colaborar en la Revista de publicación digital en Chile SAPO, en su versión GRAPH No. 1 aparece mencionado en la página 05, 53 y 98.</li>
+                <li>Participó en la integración de la expo INFLUENCERS de 2022 pero no hay información del lugar o fotografías.</li>
+                <li>Así como en repositorios artísticos como ArtStation o DevianArt (aunque él ha mencionado en dichas páginas que no muestran sus trabajos más actualizados que suele compartir en sus perfiles sociales, principalmente en Facebook a través de su alter ego God, Devil and Me).</li>
                 <li>Cuenta con publicaciones en repositorios formales como Zenodo y ORCID sobre su faceta como comunicador y divulgador.</li>
             </ul>
 
             <h2 class="wiki-section-title" id="referencias">Referencias Académicas / Zenodo</h2>
             <div class="ref-list">
                 <ol>
-                    <li>LA DICTADURA DE LA LUZ: Implicaciones Neurobiológicas, Económicas y Psicosociales de la Transición a la Iluminación de Espectro Frío. <a href="https://doi.org/10.5281/zenodo.18066101" target="_blank">doi.org/10.5281/zenodo.18066101</a></li>
-                    <li>IMPLEMENTACIÓN DE ALGORITMOS COMBINATORIOS DE ALTA EFICIENCIA EN ENTORNOS DE CÓMPUTO NO CONVENCIONALES. <a href="https://doi.org/10.5281/zenodo.18107678" target="_blank">doi.org/10.5281/zenodo.18107678</a></li>
-                    <li>Estudio de implementación MOVAIL - Reducción de complejidad algorítmica de probabilística a determinista. <a href="https://doi.org/10.5281/zenodo.18107678" target="_blank">doi.org/10.5281/zenodo.18107678</a></li>
-                    <li>Metodología de Inteligencia Vol. I: Vulnerabilidades Sistémicas y un Nuevo Paradigma de la Soberanía Digital basada en Hardware. <a href="https://doi.org/10.5281/zenodo.18415821" target="_blank">doi.org/10.5281/zenodo.18415821</a></li>
+                    <li>LA DICTADURA DE LA LUZ: Implicaciones Neurobiológicas, Económicas y Psicosociales de la Transición a la Iluminación de Espectro Frío. <a href="https://doi.org/10.5281/zenodo.18066101" target="_blank">https://doi.org/10.5281/zenodo.18066101</a></li>
+                    <li>IMPLEMENTACIÓN DE ALGORITMOS COMBINATORIOS DE ALTA EFICIENCIA EN ENTORNOS DE CÓMPUTO NO CONVENCIONALES SOBRE PLATAFORMAS PROPIETARIAS: De la Soberanía Geoespacial (Movail) a la Cognición Sintética (OSSAI). <a href="https://doi.org/10.5281/zenodo.18107678" target="_blank">https://doi.org/10.5281/zenodo.18107678</a></li>
+                    <li>Estudio de implementación MOVAIL - Reducción de complejidad algorítmica de probabilística a determinista (Actualización v.2.0 / 2025). <a href="https://doi.org/10.5281/zenodo.18107678" target="_blank">https://doi.org/10.5281/zenodo.18107678</a></li>
+                    <li>Metodología de Inteligencia Vol. I: Vulnerabilidades Sistémicas y un Nuevo Paradigma de la Soberanía Digital basada en Hardware. <a href="https://doi.org/10.5281/zenodo.18415821" target="_blank">https://doi.org/10.5281/zenodo.18415821</a></li>
                 </ol>
+            </div>
+            
+            <h2 class="wiki-section-title" id="busquedas">Referencias y búsquedas Google</h2>
+            <div style="text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed var(--border-color); background: var(--bg-alt); border-radius: 8px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: bold; margin: 0;">[AQUÍ VA LA IMAGEN DE BÚSQUEDAS GOOGLE]</p>
             </div>
 
         </div>
