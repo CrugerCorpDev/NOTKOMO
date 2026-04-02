@@ -147,7 +147,17 @@
             }
             contenedor.innerHTML = html;
         }
+    <script src="menu.js"></script>
+    
+    <script src="noticias.js"></script>
+
+    <script>
+        // Inyectamos las 3 más recientes en el contenedor de la Home
+        document.addEventListener("DOMContentLoaded", () => {
+            inyectarNoticias('grid-preview-home', 3);
+        });
     </script>
-    <script src="https://angelcuriosidades.blogspot.com/feeds/posts/summary?alt=json-in-script&callback=cargarHomePreview&max-results=3"></script>
+</body>
+</html>
 </body>
 </html>
