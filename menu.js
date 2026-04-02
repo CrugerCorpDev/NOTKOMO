@@ -29,8 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="gdm.html" ${isActive('gdm.html')}>► God, Devil and Me</a>
             <a href="red-rainbow.html" ${isActive('red-rainbow.html')}>► Red Rainbow</a>
             <a href="fundacion-dws.html" ${isActive('fundacion-dws.html')}>► Fundación DWS</a>
+            <a href="movail.html" ${isActive('movail.html')}>► MOVAIL</a>
             
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
             <a href="bitacora.html" ${isActive('bitacora.html')}>Bitácora General</a>
             <a href="privacidad.html" style="font-size: 0.7rem; opacity: 0.6;" ${isActive('privacidad.html')}>Aviso de Privacidad</a>
         </div>
