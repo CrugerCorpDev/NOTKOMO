@@ -7,20 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        .hero-hub { padding: 140px 30px 60px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .main-logo { max-width: 280px; margin-bottom: 30px; filter: drop-shadow(0 0 15px rgba(62, 139, 255, 0.2)); }
-        .search-container { margin: 40px auto; max-width: 600px; position: relative; }
-        .search-bar {
-            width: 100%; padding: 15px 25px; background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border); border-radius: 50px; color: white;
-            font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s;
+        .hero-hub { padding: 120px 20px 60px; max-width: 1200px; margin: 0 auto; }
+        
+        /* AQUÍ ESTÁ LA CORRECCIÓN DEL BANNER GIGANTE */
+        .main-logo { 
+            width: 100%; 
+            max-width: 1200px; 
+            height: auto; 
+            margin-bottom: 40px; 
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave para que resalte sobre el blanco */
+            object-fit: cover;
+            display: block;
         }
-        .search-bar:focus { border-color: var(--primary-color); background: rgba(255, 255, 255, 0.1); }
-        .hub-description { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; margin-bottom: 60px; }
-        .section-label { color: var(--primary-color); font-family: monospace; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
-        #grid-preview-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .news-card-home { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-top: 3px solid var(--primary-color); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
-        .card-img-home { height: 180px; width: 100%; object-fit: cover; }
+
+        /* Barra de búsqueda adaptada al fondo blanco */
+        .search-container { margin: 0 auto 40px auto; max-width: 600px; position: relative; }
+        .search-bar {
+            width: 100%; padding: 15px 25px; background: var(--bg-alt);
+            border: 1px solid var(--border-color); border-radius: 50px; color: var(--text-main);
+            font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s;
+            box-sizing: border-box;
+        }
+        .search-bar:focus { border-color: var(--primary-color); background: #ffffff; box-shadow: 0 0 10px rgba(62, 139, 255, 0.1); }
+        
+        /* Textos justificados */
+        .hub-description { color: var(--text-main); line-height: 1.8; font-size: 1.05rem; margin-bottom: 60px; text-align: justify; }
+        
+        .section-label { color: var(--primary-color); font-family: monospace; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; text-align: center; }
+        #grid-preview-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
     </style>
 </head>
 <body>
@@ -46,18 +61,20 @@
             </p>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 40px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
         <span class="section-label">Actividad Reciente</span>
         <div id="grid-preview-home"></div>
 
-        <a href="bitacora.html" class="btn" style="display: inline-block; margin-top: 30px;">Explorar Bitácora completa</a>
+        <div style="text-align: center;">
+            <a href="bitacora.html" class="btn" style="display: inline-block; margin-top: 30px;">Explorar Bitácora completa</a>
+        </div>
     </main>
 
-    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--glass-border); margin-top: 100px;">
+    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 100px; background: var(--bg-alt);">
         <p style="font-size: 0.8rem; color: var(--text-muted);">
             © 2026 <strong>NOTKOMO NETWORKS</strong>. Todos los derechos reservados. <br>
-            <span style="opacity: 0.5;">Propiedad intelectual de Angel Cruger.</span>
+            <span style="opacity: 0.8;">Propiedad intelectual de Angel Cruger.</span>
         </p>
     </footer>
 
