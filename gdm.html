@@ -7,35 +7,18 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos específicos de la ficha técnica (Infobox) - Tema Púrpura GDM */
         .wiki-infobox {
-            float: right;
-            width: 320px;
-            background-color: #f9f9f9;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            margin: 0 0 20px 30px;
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            float: right; width: 320px; background-color: #f9f9f9; border: 1px solid var(--border-color);
+            padding: 15px; margin: 0 0 20px 30px; font-family: sans-serif; font-size: 0.85rem;
+            border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+        /* Color púrpura característico de GDM */
         .wiki-infobox-title {
-            background-color: #551A8B; /* Púrpura GDM */
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background-color: #551A8B; color: white; text-align: center;
+            font-weight: bold; padding: 12px; margin-bottom: 15px; font-size: 1.2rem;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;
         }
-        .wiki-infobox img {
-            max-width: 100%; height: auto; display: block; margin: 0 auto 15px;
-            border-radius: 4px;
-        }
+        .wiki-infobox img { max-width: 100%; height: auto; display: block; margin: 0 auto 15px; border-radius: 4px; }
         .wiki-infobox-row { display: flex; border-bottom: 1px solid #eeeeee; padding: 10px 0; }
         .wiki-infobox-row:last-child { border-bottom: none; }
         .wiki-infobox-label { font-weight: bold; width: 40%; color: var(--text-main); }
@@ -43,16 +26,10 @@
         .wiki-infobox-data a { color: #0645ad; text-decoration: none; }
         .wiki-infobox-data a:hover { text-decoration: underline; }
 
-        /* Imágenes integradas en el texto */
-        .img-float-left { float: left; margin: 5px 25px 20px 0; max-width: 280px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .img-float-left { float: left; margin: 5px 25px 20px 0; max-width: 250px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .img-float-right { float: right; margin: 5px 0 20px 25px; max-width: 250px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         
-        .ref-list { font-size: 0.9em; background: var(--bg-alt); padding: 25px; border: 1px solid var(--border-color); border-radius: 8px; margin-top: 20px; }
-        .ref-list li { margin-bottom: 15px; word-wrap: break-word; }
-
-        @media (max-width: 768px) {
-            .wiki-infobox, .img-float-left, .img-float-right { float: none; width: 100%; max-width: 100%; margin: 0 0 30px 0; box-sizing: border-box; }
-        }
+        @media (max-width: 768px) { .wiki-infobox, .img-float-left, .img-float-right { float: none; width: 100%; max-width: 100%; margin: 0 0 30px 0; box-sizing: border-box; } }
     </style>
 </head>
 <body>
@@ -60,7 +37,7 @@
     <main class="wiki-container" style="padding-top: 120px;">
         
         <div style="text-align: center; margin-bottom: 40px; width: 100%;">
-             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtCmvrsoo957cl-oVq4cFjuvbcYY7RHlZb8SBRZZxGrsjB97DLkgLV0PSSOvTDFSodvnG70vqCt3ZkADUNHom1QYHU1oD5pLcFhLmDMSX0ATtjvqzFVc83sgMww7iCRPKfM08xgpzeGEmNMRJb3emjL5hvjPQUceSMe-TdsxL1rgzX_Imso5dPIXEwjXyl/w664-h341/574370116_1429730105831562_2750504988151244433_n.jpg" alt="God, Devil and Me Banner" style="width: 100%; max-width: 900px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtCmvrsoo957cl-oVq4cFjuvbcYY7RHlZb8SBRZZxGrsjB97DLkgLV0PSSOvTDFSodvnG70vqCt3ZkADUNHom1QYHU1oD5pLcFhLmDMSX0ATtjvqzFVc83sgMww7iCRPKfM08xgpzeGEmNMRJb3emjL5hvjPQUceSMe-TdsxL1rgzX_Imso5dPIXEwjXyl/w664-h341/574370116_1429730105831562_2750504988151244433_n.jpg" alt="God, Devil and Me" style="width: 100%; max-width: 900px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         </div>
 
         <header style="position: static; background: transparent; border: none; padding: 0; margin-bottom: 30px; display: block;">
@@ -73,103 +50,69 @@
             <div class="wiki-infobox">
                 <div class="wiki-infobox-title">Universo GDM</div>
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAqtSKNt2oIseA-AWS_Q_amCsSeMXFhY0F7_53u6Gj2-vIzXkG4o78lw9K9kEchT4obGakOA2JPSM51s3fLSs7iR6Z_-2hlSWjoBZ89_3LRPoViRjb965nyaeFm-lZoFPZj_E68VUyHRG8k_pphlf1Gai_UahkxjY27qHj9d5OmFJ3K3eviuh-1hMsNrcZ/w318-h320/GDM_by_Angel_Cruger.jpg" alt="GDM Logo">
-                
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Seudónimo</div>
-                    <div class="wiki-infobox-data">God, Devil and Me</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Creador</div>
-                    <div class="wiki-infobox-data"><a href="angel-cruger.html">Angel Cruger</a></div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Géneros principales</div>
-                    <div class="wiki-infobox-data">Fantasía Oscura, Cyberpunk, Ciencia Ficción</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Obras destacadas</div>
-                    <div class="wiki-infobox-data">Auro, The Secret Guardian, Ryker, Arthelion</div>
-                </div>
-                <div class="wiki-infobox-row">
-                    <div class="wiki-infobox-label">Actividad</div>
-                    <div class="wiki-infobox-data">Desde 2015</div>
-                </div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Seudónimo</div><div class="wiki-infobox-data">God, Devil and Me</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Creador</div><div class="wiki-infobox-data"><a href="angel-cruger.html">Angel Cruger</a></div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Géneros principales</div><div class="wiki-infobox-data">Fantasía Oscura, Cyberpunk, Ciencia Ficción</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Obras destacadas</div><div class="wiki-infobox-data">Auro, The Secret Guardian, Ryker, Arthelion</div></div>
+                <div class="wiki-infobox-row"><div class="wiki-infobox-label">Actividad</div><div class="wiki-infobox-data">Desde 2015</div></div>
             </div>
 
             <div class="wiki-toc">
                 <h2>SUMARIO</h2>
                 <ul>
                     <li><a href="#gdm">1. GDM (God, Devil and Me)</a></li>
-                    <li><a href="#artistica">2. Faceta Artística y Críticas</a></li>
+                    <li><a href="#artistica">2. Faceta Artística</a></li>
                     <li><a href="#universo">3. Historias y Universo creativo</a></li>
                     <li><a href="#publicaciones">4. Noticias y Publicaciones</a></li>
                 </ul>
             </div>
-
             <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="gdm">GDM (God, Devil and Me)</h2>
-            
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBPRVRjtNynTcyQSr6X1YRZJMninApbmwfVJSb-aJUPWJUC54mI_jhlH_uGgQFQVgWhq2nNbSYDzpJragTC4tCX5QfB7BSieMID3rkZTkJYlWYCRLaAS9fXeJeQPiTJX_NPsFfTlSkIJg9oK_bgyImtWgfp7uDmeyUMo8iyoUcXztmtUIspykdZRK0WOf8/s320/484918739_1219471350190773_6336340290365414454_n.jpg" alt="Avatar GDM" class="img-float-right" style="max-width: 180px;">
-            
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBPRVRjtNynTcyQSr6X1YRZJMninApbmwfVJSb-aJUPWJUC54mI_jhlH_uGgQFQVgWhq2nNbSYDzpJragTC4tCX5QfB7BSieMID3rkZTkJYlWYCRLaAS9fXeJeQPiTJX_NPsFfTlSkIJg9oK_bgyImtWgfp7uDmeyUMo8iyoUcXztmtUIspykdZRK0WOf8/s320/484918739_1219471350190773_6336340290365414454_n.jpg" alt="GDM Perfil" class="img-float-right" style="max-width: 180px;">
             <p>La página y el perfil es el seudónimo o alter ego del <strong>Influencer</strong> y artista digital <a href="angel-cruger.html">Angel Cruger</a>. Desde 2015 comenzó a subir pequeñas ilustraciones e historias personalizadas. La diferencia es que no comenzó simplemente haciendo <strong>FanArt</strong> de otros sino que creó su propio universo digital del cual se desprenden muchos proyectos e historias que aunque se promocionan, siguen siendo parte reservada de la creatividad de Cruger.</p>
-            
-            <p><a href="angel-cruger.html">Angel</a> comentó en su cuenta de Facebook sobre el nombre que eligió para su perfil <strong>(God, Devil and Me)</strong>, ya que considera que es una interpretación de cómo las personas podrían interpretarse a sí mismas, es la representación del <em>yo</em>, en cualquiera de sus estados. Lo bueno, lo malo y el yo conviven con uno mismo, no son diferentes conceptos de una persona sino partes integrales de la máscara que las personas suelen usar para justificar sus actos, de modo que el "Me" (Yo) significa que se muestra tal cual es sin importarle la opinión de otros.</p>
-
+            <p>Angel comentó en su cuenta de Facebook sobre el nombre que eligió para su perfil <strong>(God, Devil and Me)</strong>, ya que considera que es una interpretación de cómo las personas podrían interpretarse a sí mismas, es la representación del <em>yo</em>, en cualquiera de sus estados. Lo bueno, lo malo y el yo conviven con uno mismo, no son diferentes conceptos de una persona sino partes integrales de la máscara que las personas suelen usar para justificar sus actos, de modo que el "Me" (Yo) significa que se muestra tal cual es sin importarle la opinión de otros.</p>
             <div style="clear: both;"></div>
 
-            <h2 class="wiki-section-title" id="artistica">Faceta Artística y Críticas</h2>
-            
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBQnePslWxdoTlkoYbeqxmHPQWtufXyyO4B6wkdrZie5Jf5RbGMLekJxOOkkzP31UFdStemf1eNlUu-qguB31MSYKUhPsfHOU_rWXdbnhiAWKWKW7OX4n0KT5e8NEIXMEagrEdZffePKmZEfZ3cYYZZPrCcoJaf3-NIvdLD8IkUambSDTEZS2YWyV3oKU0/w268-h414/angel-cruger-20220405-002054.jpg" alt="Arcángel Miguel" class="img-float-left">
-            
+            <h2 class="wiki-section-title" id="artistica">Faceta Artística</h2>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBQnePslWxdoTlkoYbeqxmHPQWtufXyyO4B6wkdrZie5Jf5RbGMLekJxOOkkzP31UFdStemf1eNlUu-qguB31MSYKUhPsfHOU_rWXdbnhiAWKWKW7OX4n0KT5e8NEIXMEagrEdZffePKmZEfZ3cYYZZPrCcoJaf3-NIvdLD8IkUambSDTEZS2YWyV3oKU0/w268-h414/angel-cruger-20220405-002054.jpg" alt="Arcángel" class="img-float-left">
             <p>Cuenta con muchas publicaciones sobre ilustración digital y artes, así como historias con narrativa profunda. Angel suele comentar activamente en sus plataformas principalmente en Facebook sobre algunos proyectos creativos en los que trabaja, sin embargo, muchos critican la falta de transparencia sobre la continuidad de los proyectos o las versiones de muestra que solo aparecen por poco tiempo publicadas. Angel suele ser muy cauteloso con eso, una de sus más recientes incursiones fue el cuento corto publicado según compañeros de facultad en la <strong>UNRC (Universidad Nacional Rosario Castellanos)</strong> sobre una historia de un robot que termina en un mundo antiguo y que muchos lo consideran una armadura embrujada, esta historia se fue puliendo hasta convertirse en un guion formal que se presentó como <em>Las Crónicas de Arthelion</em>, sin embargo, pese a existir información sobre la historia o sobre un capítulo cero, no se ha continuado con su publicación.</p>
-
             <p>Esto molesta a sus seguidores quienes quieren contenidos continuos, Angel suele mantener un perfil bajo en cuanto a serializaciones, lo mismo ocurrió con <em>Ryker entre dos mundos, El guardián secreto, El veneno más hermoso</em>, la mini serie sobre su propia caricatura <a href="red-rainbow.html">RED RAINBOW</a> (mascota de Angel Curiosidades en estilo chibi) aunque se ha mencionado trabajar en un ArtBook recopilatorio para compensar a sus fans.</p>
-
-            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhPkkKNMbosprjCstatx5xvsXTgG5-jLpNvS0GQEK6b2DbZdR602jgv2Tqqlf8Gurv6LWqJFKgyUPOgIdZASBLTL_3rIMjRi6hLYddF6SAayE83DI7yVRq7idzoJo2CpiSc1oQ6ine47rOA-gkaSenSjS4pkNyKs_8wZpX1tV-td7fNx15RJbSrQ06KSFYb" alt="Arte Conceptual" class="img-float-right">
-
             <p>Cuenta con muchas ilustraciones entre las que destaca <em>Arcángel Miguel sometiendo al Diablo</em>, una pieza ilustrativa que refleja su faceta de evolución a través de los años ya que es una reinterpretación de una versión presentada en 2017. Su estilo Gótico y de Fantasía oscura lo lleva a acumular una comunidad de seguidores que buscan historias fuera de lo convencional. Una de las que más se publicó en redes sociales fue <em>Auro</em> aunque no se concluyó y contaba con muchos errores de edición, este trabajo ayudó a consolidarlo como artista y narrador de historias con profundidad en los personajes.</p>
-
             <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="universo">Historias y Universo creativo</h2>
             <p>Las historias de Angel suelen tener un trasfondo filosófico fuerte, y se caracterizan por ser fantasía oscura y temas futuristas. Dentro de las historias que ha desarrollado en su UNIVERSO GDM (God, Devil and Me, seudónimo que suele usar en su faceta creativa aunque ha optado por firmar sus obras después simplemente como Angel Cruger y sigue siendo el nombre de su página en Facebook sobre temas de ilustración y proyectos artísticos) destacan:</p>
-
+            
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjT0UjXM5hbrkc-ywici1VI8V4gQa2T38p5WtwjD4opWTQIs7yczDGMNdcL02qq6vCEJOcKUkBpM9iZiC8f_3GSBjcs-nNnuaF5m-h0justOQlw6zeiy1gKYv3HN84QE2tjeb6tCCWRrY_36h8SC2Y6tIDtWSFB6eDT_fHeZcr2JN69f8xCEZfPh-dSB4VL/w200-h200/474851462_2714969668712273_7429255850861995277_n.jpg" alt="Auro Cover" class="img-float-right" style="max-width: 150px;">
             <ul style="padding-left: 20px;">
                 <li><strong>Auro (Untold, Legends, The last Aurian´s):</strong> Una historia incompleta que trata sobre un ser que ve cómo su planeta es consumido por una raza alienígena. La historia narra la soberbia del planeta SABDOM, quienes sometían a su voluntad a otras razas, sin embargo, estaban en un planeta que agonizaba. La solución se presentó de manera extraña y fortuita cuando una raza alienígena se ofreció a ayudar al planeta, pero solo querían liberar a un antiguo mal que estaba prisionero en la fortaleza del IFROS.</li>
-                
-                <li><strong>The Secret Guardian (El guardián secreto, Las crónicas de Allius):</strong> La historia narra una aventura personal que le ocurre a un joven llamado Allius. Debe enfrentar una batalla personal y una transición a nuevos retos. En el primer capítulo se encuentra con una bruja atrapada en un sello antiguo y termina liberándola. La narrativa logra ligar a Allius en su camino mientras en el trasfondo está ocurriendo una guerra que evoluciona a manera de Spin-off.</li>
-                
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkOqLe4R1vrJVcwXaDmo5EXtsZGTSW44NJ2_1xi5CT0IznpWGcTzdu-GPEEoDN_bo2FqNfKhJQxOCrCxlc1NG_4qK6kpAVZb0aL1To7WUEbkb1ym9rtyNdBZbJBB0PpWPpiedD7UT7iVpUSplTxor_uuiUqV7gO8FJfw8s9qSnj5RfF5_OXrfFEZEcW69t/w154-h200/485310319_1220876793383562_1107065497129501320_n.jpg" alt="Ryker Cover" class="img-float-right" style="max-width: 130px; margin-top: 10px;">
-                <li><strong>Ryker entre dos mundos:</strong> Ryker es el hijo del Rey Demonio, que vive en el Infierno. Abandonará el reino de su padre para enfrentarse a los peligros del inframundo en búsqueda de cruzar al mundo de los humanos. Su padre lo explota debido a que él es el único capaz de despertar un poder antiguo para abrir un portal entre ambos mundos.</li>
-                
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf054WFUH_UvHAmCmIGd8H388ekv43JcfXcD_D4EHoEdGDfjww3USsUN34v_NmnDkO8vtsq585HE-cxFJ3r0wZzJ7_2l4WMJjvS52SGK2sRCbOs0g4yDGmSMRvIs14LSPLHXkmuBssprxLICsS3BGBz_zRx-WUCC3O27uj4DC09U5OsDvAeeSWu1c3wrN3/w291-h345/474823825_2714957445380162_7400666374850896659_n.jpg" alt="Arthelion Robot" class="img-float-left" style="max-width: 200px;">
-                <li><strong>Las Crónicas de Arthelion:</strong> Se centran principalmente en un reino antiguo que recibe la inesperada visita de una armadura que se mueve y habla (un robot), despertando antiguas leyendas. Aquí el autor se introduce directamente en la historia usando el modelo de su personaje <a href="red-rainbow.html">Red Rainbow</a>.</li>
+                <li><strong>The Secret Guardian (El guardián secreto, Las crónicas de Allius):</strong> La historia narra una aventura personal que le ocurre a un joven llamado Allius, quien vive en un pequeño pueblo dentro de un bosque. Allius debe enfrentar una batalla personal y una transición a nuevos retos que lo llevarán a enfrentar su propia naturaleza.</li>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkOqLe4R1vrJVcwXaDmo5EXtsZGTSW44NJ2_1xi5CT0IznpWGcTzdu-GPEEoDN_bo2FqNfKhJQxOCrCxlc1NG_4qK6kpAVZb0aL1To7WUEbkb1ym9rtyNdBZbJBB0PpWPpiedD7UT7iVpUSplTxor_uuiUqV7gO8FJfw8s9qSnj5RfF5_OXrfFEZEcW69t/w154-h200/485310319_1220876793383562_1107065497129501320_n.jpg" alt="Ryker" class="img-float-right" style="max-width: 130px; margin-top: 10px;">
+                <li><strong>Ryker entre dos mundos:</strong> Ryker es el hijo del Rey Demonio, que vive en el Inframundo/Infierno. Debe enfrentar las terribles consecuencias de ser el hijo de un regente infernal y solo contará con un aliado: Stolas, su gran guardián y amigo. Ryker abandonará el reino de su padre para enfrentarse a los peligros del infierno en búsqueda de lograr atravesar al mundo de los humanos.</li>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf054WFUH_UvHAmCmIGd8H388ekv43JcfXcD_D4EHoEdGDfjww3USsUN34v_NmnDkO8vtsq585HE-cxFJ3r0wZzJ7_2l4WMJjvS52SGK2sRCbOs0g4yDGmSMRvIs14LSPLHXkmuBssprxLICsS3BGBz_zRx-WUCC3O27uj4DC09U5OsDvAeeSWu1c3wrN3/w291-h345/474823825_2714957445380162_7400666374850896659_n.jpg" alt="Arthelion" class="img-float-left" style="max-width: 180px;">
+                <li><strong>Las Crónicas de Arthelion:</strong> Se centran principalmente en un reino antiguo que desde el primer momento recibe la inesperada visita de una armadura que se mueve, camina y habla de una manera muy extraña. Para los lectores es claro que se trata de un robot. Aquí el autor se introduce directamente en la historia al nombrar a su personaje Angel y usar el modelo de su personaje Red Rainbow en un estilo más animado.</li>
             </ul>
-
             <div style="clear: both;"></div>
 
-            <p>Cuenta con ilustraciones seriadas sobre diferentes colecciones, así como versos y cuentos cortos que terminaron siendo otras historias, como <em>El veneno más hermoso</em> o <em>Arlift Adees In the Hell</em> (rebautizado como <em>El infierno de Arlifth</em>, una historia muy oscura sobre el hermano de Auro). Esta última historia cambió muchas veces sus cuadros hasta centrarse en los personajes secundarios; es a través de un escrito en tercera persona como se lee la historia.</p>
+            <p>Cuenta con ilustraciones seriadas sobre diferentes colecciones, así como versos y cuentos cortos que terminaron siendo otras historias, como <em>El veneno más hermoso</em> o <em>Arlift Adees In the Hell</em> (rebautizado como <em>El infierno de Arlifth</em>). Esta última historia cambió muchas veces sus cuadros hasta centrarse en los personajes secundarios; es a través de un escrito en tercera persona como se lee la historia.</p>
             <p><em>Final End´s Un mundo en Guerra</em> es una historia sobre la colección de ilustraciones de Ángeles Legendarios. Narra el principio de una de las batallas más detalladas de su colección, y el principio de uno de los seres más enigmáticos de sus series de cartas ZERITH.</p>
 
             <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjyaWkuMFnpy0b5oPloD9nuUH7lAm-iMipE4hw5UkqkLqo7Wdy-hJdf4F6pmKlEHt2muhhLZe1HR-gMIvBNCTh9-piIlrIVNxf0Y0Hr_3XkRAhVGwH4qcZerlJbiQQ_C21pFPwlztY7LcQBb3y4CM_mxBjnTWJqkDQ_4y09U4rBNpAO4yfaBJlIrgUcF8ba=w231-h301" alt="Artbook" class="img-float-left" style="max-width: 200px;">
-            <p><strong>ARTBOOK:</strong> Esta colección detalla un avance de preservación y un intento por recuperar datos de historias perdidos. Incluye ilustraciones inéditas, historias como <em>El veneno más hermoso</em>, e incluso se menciona una de las más esperadas: <strong>UNREAL´S</strong>, una historia futurista y Cyberpunk sobre androides SINTIENTES creados por la CORPORACIÓN en la megalópolis de INFINITY CITY.</p>
+            <p><strong>ARTBOOK:</strong> Esta colección detalla, según la propia página de God, Devil and Me, un avance de preservación y un intento por recuperar datos de historias perdidos, continuarlos o cerrarlos de manera digna. Incluye, por lo que se ha mencionado, ilustraciones inéditas, avances de nuevos proyectos, historias como <em>El veneno más hermoso</em> o <em>Mi encuentro con la Bestia</em>, e incluso se menciona una de las más esperadas por los seguidores: <strong>UNREAL´S</strong>, una historia futurista y Cyberpunk. Su trama indica tratarse de la próxima generación de androides conocidos como los UNREAL´S o SINTIENTES, creados por la CORPORACIÓN. Sin embargo, despertarían la bajeza de la humanidad y estarían al borde de la extinción; sin derechos que los protejan, un grupo de rebeldes luchan en las sombras contra la CORPORACIÓN ya que se cree que experimentan con humanos. Uno de sus experimentos ha escapado y ahora se encuentra oculto en la megalópolis de INFINITY CITY.</p>
 
             <div style="clear: both;"></div>
-
             <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi3t4XuNNfI502OZOqlaihP8ye8Lx0ZRHRkQyEfeOvJ0-TPDQYfUMiEo66lF1lxxTt77mqbH9vPQL5qruCHi7erqezWZKbuKqgSgZzSWId38uOXmNOY8_Dx1H_Kp1vgXyUm2LrQijcfSGRw-AzK7FpD5sNLFE_FyiyJEbHJdMbiC4fb8FQdvWtFJwdHT_-C" alt="TCG" class="img-float-right" style="max-width: 350px;">
             <p><strong>FINAL END´S TCG:</strong> Angel trabajó hace varios años el concepto de un juego de cartas y se sabe que existen imágenes referentes a diferentes partes del juego con mecánicas de combate, aunque después simplemente se simplificaron a mostrar las ilustraciones más recientes a manera de cartas TCG muy detalladas.</p>
-
             <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="publicaciones">Noticias y Publicaciones</h2>
             <ul>
-                <li><strong>Angel</strong> participó en <strong>La Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC)</strong>.</li>
-                <li>Ha sido invitado a colaborar en espacios creativos como invitado en <strong>videojuegos INDIE</strong> aunque él mismo ha asegurado negarse por el contenido explícito de algunos proyectos.</li>
+                <li>Angel participó en <strong>La Primera Jornada Académica de Educación, Arte y Diversidad (organizada por el IMAC)</strong>.</li>
+                <li>Ha sido invitado a colaborar en espacios creativos como invitado en <strong>videojuegos INDIE</strong> aunque él mismo ha asegurado negarse por el contenido explícito de algunos proyectos o que no se alinea con su visión creativa.</li>
                 <li>En 2020 fue invitado a colaborar en la <strong>Revista de publicación digital en Chile SAPO</strong>, en su versión <strong>GRAPH No. 1</strong> aparece mencionado en la página 05, 53 y 98.</li>
-                <li>Participó en la integración de la <strong>expo INFLUENCERS de 2022</strong>.</li>
-                <li>Tiene presencia en repositorios artísticos como ArtStation o DeviantArt, aunque sus trabajos más recientes suelen ser compartidos en su alter ego <a href="https://www.facebook.com/GodDevilandMe" target="_blank">God, Devil and Me</a> en Facebook.</li>
+                <li>Participó en la integración de la <strong>expo INFLUENCERS de 2022</strong> pero no hay información del lugar o fotografías.</li>
+                <li>Así como en repositorios artísticos como <strong>ArtStation</strong> o <strong>DeviantArt</strong> (aunque él ha mencionado en dichas páginas que no muestran sus trabajos más actualizados que suele compartir en sus perfiles sociales, principalmente en Facebook a través de su alter ego <a href="https://www.facebook.com/GodDevilandMe" target="_blank">God, Devil and Me</a>).</li>
             </ul>
 
         </div>
