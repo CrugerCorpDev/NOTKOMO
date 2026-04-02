@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <header>
             <nav class="nav-links">
                 <a href="index.html" ${isActive('index.html')}>Inicio</a>
-                <a href="bitacora.html" ${isActive('bitacora.html')}>NOTICIAS</a>
-                <a href="angel-cruger.html">Angel Cruger</a>
+                <a href="bitacora.html" ${isActive('bitacora.html')}>Noticias</a>
+                <a href="angel-cruger.html" ${isActive('angel-cruger.html')}>Angel Cruger</a>
             </nav>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
         </header>
@@ -23,16 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="sidebar-title">NOTKOMO NETWORKS</div>
             
             <a href="index.html" ${isActive('index.html')}>► NOTKOMO (Home)</a>
-            <a href="angel-curiosidades.html">► Angel Curiosidades</a>
-            <a href="onestudios.html">► ONESTUDIOS</a>
-            <a href="angel-cruger.html">► Angel Cruger</a>
-            <a href="gdm.html">► God, Devil and Me</a>
-            <a href="red-rainbow.html">► Red Rainbow</a>
-            <a href="fundacion-dws.html">► Fundación DWS</a>
+            <a href="angel-curiosidades.html" ${isActive('angel-curiosidades.html')}>► Angel Curiosidades</a>
+            <a href="onestudios.html" ${isActive('onestudios.html')}>► ONESTUDIOS</a>
+            <a href="angel-cruger.html" ${isActive('angel-cruger.html')}>► Angel Cruger</a>
+            <a href="gdm.html" ${isActive('gdm.html')}>► God, Devil and Me</a>
+            <a href="red-rainbow.html" ${isActive('red-rainbow.html')}>► Red Rainbow</a>
+            <a href="fundacion-dws.html" ${isActive('fundacion-dws.html')}>► Fundación DWS</a>
             
             <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
-            <a href="bitacora.html">Bitácora General</a>
-            <a href="privacidad.html" style="font-size: 0.7rem; opacity: 0.6;">Aviso de Privacidad</a>
+            <a href="bitacora.html" ${isActive('bitacora.html')}>Bitácora General</a>
+            <a href="privacidad.html" style="font-size: 0.7rem; opacity: 0.6;" ${isActive('privacidad.html')}>Aviso de Privacidad</a>
         </div>
     `;
     document.body.insertAdjacentHTML("afterbegin", menuHTML);
