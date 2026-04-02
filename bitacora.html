@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitácora | NOTKOMO NETWORKS</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <section style="padding: 140px 30px 40px; max-width: 1100px; margin: 0 auto;">
-        <span class="section-label">Historial de Publicaciones</span>
-        <h1>BITÁCORA Y COMUNICADOS</h1>
-        <p style="color: var(--text-muted); max-width: 800px;">Repositorio completo de noticias, investigaciones y actualizaciones de NOTKOMO NETWORKS.</p>
+        <span class="section-label">Historial de la Red</span>
+        <h1>BITÁCORA Y ARCHIVO</h1>
+        <p style="color: var(--text-muted);">Repositorio unificado de noticias, curiosidades y actualizaciones de la red NOTKOMO.</p>
     </section>
 
     <section id="lista-completa-noticias" style="max-width: 1100px; margin: 0 auto; padding: 0 30px 80px;">
@@ -24,8 +22,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             const contenedor = document.getElementById('lista-completa-noticias');
             let html = '';
-            
-            // Aquí mostramos TODAS las noticias del archivo noticias.js
             noticias.forEach(nota => {
                 html += `
                 <div class="news-card">
