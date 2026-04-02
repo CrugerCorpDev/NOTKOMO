@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora | NOTKOMO NETWORKS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section style="padding: 140px 30px 40px; max-width: 1100px; margin: 0 auto;">
+        <span class="section-label">Historial de Publicaciones</span>
+        <h1>BITÁCORA Y COMUNICADOS</h1>
+        <p style="color: var(--text-muted); max-width: 800px;">Repositorio completo de noticias, investigaciones y actualizaciones de NOTKOMO NETWORKS.</p>
+    </section>
+
+    <section id="lista-completa-noticias" style="max-width: 1100px; margin: 0 auto; padding: 0 30px 80px;">
+        </section>
+
+    <script src="menu.js"></script>
+    <script src="noticias.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contenedor = document.getElementById('lista-completa-noticias');
+            let html = '';
+            
+            // Aquí mostramos TODAS las noticias del archivo noticias.js
+            noticias.forEach(nota => {
+                html += `
+                <div class="news-card">
+                    <div class="news-image"><img src="${nota.imagen}"></div>
+                    <div class="news-content" style="padding: 30px; flex: 1; display: flex; flex-direction: column;">
+                        <span style="color: var(--primary-color); font-size: 0.7rem; font-weight: bold; letter-spacing: 2px;">${nota.fecha} | ${nota.categoria}</span>
+                        <h3 style="margin: 15px 0; font-size: 1.5rem; color: #fff;">${nota.titulo}</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">${nota.resumen}</p>
+                        <div style="text-align: right; margin-top: auto;">
+                            <a href="${nota.enlace}" class="btn">SEGUIR LEYENDO</a>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            contenedor.innerHTML = html;
+        });
+    </script>
+</body>
+</html>
