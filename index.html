@@ -3,10 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTKOMO NETWORKS</title>
+    <title>NOTKOMO NETWORKS | Portal Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para el Hero del Hub */
+        .hero-hub {
+            padding: 140px 30px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .main-logo {
+            max-width: 280px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 15px rgba(255, 62, 62, 0.2));
+        }
+        
+        /* Barra de Búsqueda */
+        .search-container {
+            margin: 40px auto;
+            max-width: 600px;
+            position: relative;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-bar:focus {
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 62, 62, 0.1);
+        }
+
+        .hub-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            color: var(--primary-color);
+            font-family: monospace;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Grid de 3 notas */
+        #grid-preview-home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* Ajuste para tarjetas en el Home (más compactas) */
+        .news-card-home {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+        .news-card-home:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+        .card-img-home { height: 180px; width: 100%; object-fit: cover; }
+    </style>
 </head>
 <body>
-    <h1>NOTKOMO NETWORKS</h1>
-    <p>El hub central está en construcción...</p>
+
+    <main class="hero-hub">
+        <img src="logo_notkomo.png" alt="NOTKOMO NETWORKS" class="main-logo">
+
+        <div class="search-container">
+            <form action="/bitacora.html" method="GET">
+                <input type="text" name="q" class="search-bar" placeholder="Buscar proyectos, arte o comunicados...">
+            </form>
+        </div>
+
+        <div class="hub-description">
+            <p>
+                <strong>NOTKOMO NETWORKS</strong> es el ecosistema matriz y holding digital de <strong>Angel Cruger</strong>. 
+                Como plataforma central, articula una red diversificada de proyectos que abarcan desde el desarrollo de software de defensa y ciberseguridad en <strong>Cruger Corp</strong>, hasta la producción de arte conceptual en <strong>ONESTUDIOS</strong>.
+            </p>
+            <p>
+                Aquí converge el legado de <strong>EDC Medios</strong>, el archivo histórico de <strong>Rigathz</strong> y la labor humanitaria de la <strong>Fundación DWS</strong>, consolidando una visión donde la tecnología, el arte y el conocimiento se encuentran en un solo punto de acceso.
+            </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 40px 0;">
+
+        <span class="section-label">Lo más reciente</span>
+        <div id="grid-preview-home">
+            <p style="color: var(--text-muted);">Sincronizando con la bitácora...</p>
+        </div>
+
+        <a href="bitacora.html" class="btn" style="display: inline-block; margin-top: 20px;">Ver toda la actividad</a>
+    </main>
+
+    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--glass-border); margin-top: 100px;">
+        <p style="font-size: 0.8rem; color: var(--text-muted); letter-spacing: 1px;">
+            © 2026 <strong>NOTKOMO NETWORKS</strong>. Todos los derechos reservados. <br>
+            <span style="opacity: 0.5;">Propiedad intelectual de Angel Cruger.</span>
+        </p>
+    </footer>
+
+    <script src="menu.js"></script>
+
+    <script>
+        function cargarHomePreview(json) {
+            var contenedor = document.getElementById('grid-preview-home');
+            var html = '';
+            var entradas = json.feed.entry || [];
+            
+            for (var i = 0; i < entradas.length; i++) {
+                var entrada = entradas[i];
+                var titulo = entrada.title.$t;
+                var enlace = entrada.link.find(l => l.rel == 'alternate').href;
+                var imagen = entrada.media$thumbnail ? entrada.media$thumbnail.url.replace('/s72-c/', '/w600-h400-c/') : 'placeholder.png';
+
+                html += `
+                <div class="news-card-home">
+                    <img src="${imagen}" class="card-img-home">
+                    <div style="padding: 20px; text-align: left;">
+                        <h3 style="font-size: 1rem; margin: 0 0 15px; line-height: 1.4;">${titulo}</h3>
+                        <a href="${enlace}" style="color: var(--primary-color); text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Seguir leyendo →</a>
+                    </div>
+                </div>`;
+            }
+            contenedor.innerHTML = html;
+        }
+    </script>
+    <script src="https://angelcuriosidades.blogspot.com/feeds/posts/summary?alt=json-in-script&callback=cargarHomePreview&max-results=3"></script>
 </body>
 </html>
