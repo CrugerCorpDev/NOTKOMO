@@ -9,19 +9,17 @@
     <style>
         .hero-hub { padding: 120px 20px 60px; max-width: 1200px; margin: 0 auto; }
         
-        /* AQUÍ ESTÁ LA CORRECCIÓN DEL BANNER GIGANTE */
         .main-logo { 
             width: 100%; 
             max-width: 1200px; 
             height: auto; 
             margin-bottom: 40px; 
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave para que resalte sobre el blanco */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             object-fit: cover;
             display: block;
         }
 
-        /* Barra de búsqueda adaptada al fondo blanco */
         .search-container { margin: 0 auto 40px auto; max-width: 600px; position: relative; }
         .search-bar {
             width: 100%; padding: 15px 25px; background: var(--bg-alt);
@@ -31,11 +29,59 @@
         }
         .search-bar:focus { border-color: var(--primary-color); background: #ffffff; box-shadow: 0 0 10px rgba(62, 139, 255, 0.1); }
         
-        /* Textos justificados */
+        /* Estilos del texto de introducción */
         .hub-description { color: var(--text-main); line-height: 1.8; font-size: 1.05rem; margin-bottom: 60px; text-align: justify; }
+        .hub-description a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+        .hub-description a:hover { text-decoration: underline; }
         
         .section-label { color: var(--primary-color); font-family: monospace; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; text-align: center; }
         #grid-preview-home { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        /* Estilos del cuadro de Actualizaciones (Estilo NOTKOMO: Azul/Cian) */
+        .cta-noticias {
+            background-color: rgba(62, 139, 255, 0.03); /* Fondo muy tenue azul */
+            border: 1px solid rgba(62, 139, 255, 0.2); /* Borde azul suave */
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.05);
+        }
+        .cta-noticias h3 {
+            color: var(--primary-color); /* Azul NOTKOMO */
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .cta-noticias p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            text-align: center; 
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-notkomo {
+            background: linear-gradient(135deg, #3E8BFF, #00B4D8); /* Degradado Azul a Cian */
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            letter-spacing: 1px;
+            border: none;
+        }
+        .btn-notkomo:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3); /* Sombra cian al pasar el mouse */
+        }
+
     </style>
 </head>
 <body>
@@ -51,24 +97,26 @@
 
         <div class="hub-description">
             <p>
-                <strong>NOTKOMO NETWORKS</strong> es el ecosistema matriz coordinado por <strong>Angel Cruger</strong>. 
-                Como plataforma central, integra una red diversificada de proyectos enfocados en la producción de arte conceptual, 
-                divulgación de conocimiento y gestión de archivos históricos de internet.
+                <strong>NOTKOMO NETWORKS</strong> es un espacio creativo que alberga diversos proyectos, todos enfocados en la visión del fundador <a href="angel-cruger.html">Angel Cruger</a>. En este espacio se detallan las bases de diferentes trabajos creativos, personales y profesionales que se han realizado como <a href="angel-curiosidades.html">Angel Curiosidades</a> (y la recopilación de las notas) que ahora tienen un espacio en la sección de noticias de esta página (en construcción debido a la cantidad de artículos que superan las 100 entradas, esperamos organizar mejor todo y que se agrupen de la mejor manera), así como datos de EDC MEDIOS, EDC EL DATO CURIOSO, RIGATHZ, y la famosa sala de diseño donde surgieron todas las ideas que han transformado espacios e historias como <em>Las crónicas de Arthelion</em>, <em>Ryker entre dos mundos</em>, God, Devil and Me (<a href="gdm.html">Universo GDM</a>) entre muchos otros, hablamos de <a href="onestudios.html">ONESTUDIO</a> (Nombre dado al espacio donde conviven todas las historias, personajes y proyectos dentro del espacio de NOTKOMO NETWORKS).
             </p>
             <p>
-                Este espacio consolida la actividad de <strong>ONESTUDIOS</strong>, el legado de <strong>EDC Medios / Angel Curiosidades</strong>, 
-                el repositorio de <strong>Rigathz</strong> y la labor humanitaria de la <strong>Fundación DWS</strong>.
+                NOTKOMO NETWORKS es un medio de difusión principal y Estudio Creativo para presentar de manera formal las diferentes etapas de proyectos, se busca más que nada generar una base documental de la información para que no solo viva en un repositorio en páginas distintas a través de la red, sino que permita explorar el mundo de cada espacio dedicado a la imaginación del creador, desde 2020 este espacio ha buscado traer esa visión, y como hemos visto con proyectos que aumentan su cercanía con el público, como la mascota oficial y personaje dedicado de la sección, <a href="red-rainbow.html">Red Rainbow</a> forma ya parte de este universo creativo.
+            </p>
+            <p>
+                Gracias por visitar este espacio, no olvides que seguimos trabajando para que todas las etapas creativas tengan un solo ecosistema por lo que el sitio está actualmente en fase de mantenimiento¡
             </p>
         </div>
 
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
-        <span class="section-label">Actividad Reciente</span>
         <div id="grid-preview-home"></div>
 
-        <div style="text-align: center;">
-            <a href="bitacora.html" class="btn" style="display: inline-block; margin-top: 30px;">Explorar Bitácora completa</a>
+        <div class="cta-noticias">
+            <h3>¿Quieres ver más actualizaciones?</h3>
+            <p>Continúa leyendo todas nuestras publicaciones, avisos, curiosidades y notas directamente en nuestro muro principal.</p>
+            <a href="bitacora.html" class="btn-notkomo">IR A LA SECCIÓN DE NOTICIAS</a>
         </div>
+
     </main>
 
     <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 100px; background: var(--bg-alt);">
