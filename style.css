@@ -1,68 +1,34 @@
-:root {
-    --primary-color: #3E8BFF; /* ¡NUEVO AZUL NOTKOMO! */
-    --bg-dark: #050A14;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --text-main: #FFFFFF;
-    --text-muted: #A0AAB5;
-}
-
-body {
-    background: linear-gradient(135deg, #020408 0%, #0A1525 100%);
-    color: var(--text-main);
-    font-family: 'Montserrat', sans-serif;
-    margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden;
-}
-
-/* Estilos de Bitácora Reutilizados */
+/* El efecto de cristal (Glassmorphism) para la barra superior */
 header {
-    padding: 15px 30px; display: flex; justify-content: flex-end; align-items: center;
-    border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(10px);
-    position: fixed; width: 100%; top: 0; z-index: 100; box-sizing: border-box; background: rgba(5, 10, 20, 0.85);
+    padding: 15px 30px; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border); 
+    backdrop-filter: blur(10px); /* Esto crea el efecto de cristal */
+    -webkit-backdrop-filter: blur(10px); /* Para que funcione en Safari/Apple */
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 100; 
+    box-sizing: border-box; 
+    background: rgba(5, 10, 20, 0.85); /* Fondo oscuro semitransparente */
 }
 
-.nav-links a {
-    color: var(--text-muted); text-decoration: none; font-size: 0.75rem;
-    text-transform: uppercase; letter-spacing: 1px; margin-left: 20px; transition: color 0.3s;
+/* El botón de las 3 rayitas (hacerlo invisible el fondo y que se vea limpio) */
+.menu-btn {
+    background: none; 
+    border: none; 
+    color: var(--text-main); 
+    font-size: 1.8rem;
+    cursor: pointer; 
+    margin-left: 30px; 
+    transition: color 0.3s; 
+    display: flex; 
+    align-items: center; 
+    padding: 0;
 }
 
-.news-card {
-    display: flex; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--glass-border);
-    border-left: 4px solid var(--primary-color); margin-bottom: 40px; border-radius: 4px;
-    transition: transform 0.3s; overflow: hidden; min-height: 200px;
+.menu-btn:hover { 
+    color: var(--primary-color); 
 }
-
-.news-image { flex: 0 0 33%; background: #000; }
-.news-image img { width: 100%; height: 100%; object-fit: cover; }
-
-.btn {
-    padding: 10px 20px; color: var(--primary-color); border: 1px solid var(--primary-color);
-    text-decoration: none; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;
-    background: transparent; transition: all 0.3s ease;
-}
-.btn:hover {
-    background: var(--primary-color);
-    color: #fff;
-    box-shadow: 0 0 15px rgba(62, 139, 255, 0.4);
-}
-
-/* Estilos Wiki adaptados al modo oscuro */
-.wiki-container {
-    max-width: 1100px; margin: 50px auto; padding: 30px;
-    background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid var(--glass-border);
-}
-
-.wiki-toc {
-    background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
-    padding: 20px; margin: 20px 0;
-}
-
-.wiki-toc a { color: var(--primary-color); text-decoration: none; }
-
-/* Sidebar del JS */
-.sidebar {
-    position: fixed; top: 0; right: -350px; width: 300px; height: 100vh;
-    background: rgba(5, 10, 20, 0.98); border-left: 1px solid var(--primary-color);
-    z-index: 999; transition: right 0.4s ease; padding: 80px 30px; box-sizing: border-box;
-}
-.sidebar.active { right: 0; }
-.sidebar a { display: block; color: #fff; text-decoration: none; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
