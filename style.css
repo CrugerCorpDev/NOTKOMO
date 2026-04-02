@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #FF3E3E; /* Rojo para diferenciar de Cruger Corp */
+    --primary-color: #3E8BFF; /* ¡NUEVO AZUL NOTKOMO! */
     --bg-dark: #050A14;
     --glass-border: rgba(255, 255, 255, 0.1);
     --text-main: #FFFFFF;
@@ -13,7 +13,7 @@ body {
     margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden;
 }
 
-/* Reutilizando tus estilos de Bitácora */
+/* Estilos de Bitácora Reutilizados */
 header {
     padding: 15px 30px; display: flex; justify-content: flex-end; align-items: center;
     border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(10px);
@@ -37,6 +37,12 @@ header {
 .btn {
     padding: 10px 20px; color: var(--primary-color); border: 1px solid var(--primary-color);
     text-decoration: none; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;
+    background: transparent; transition: all 0.3s ease;
+}
+.btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(62, 139, 255, 0.4);
 }
 
 /* Estilos Wiki adaptados al modo oscuro */
