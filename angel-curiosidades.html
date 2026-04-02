@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Curiosidades | NOTKOMO NETWORKS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos específicos para preservar el "Look Wiki" en modo oscuro */
+        .wiki-toc {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary-color);
+            display: inline-block;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .wiki-toc h2 { font-size: 1.1rem; color: var(--primary-color); margin-top: 0; text-align: center; }
+        .wiki-toc ul { list-style-type: none; padding-left: 0; margin: 0; }
+        .wiki-toc li { margin-bottom: 10px; font-size: 0.9rem; }
+        .wiki-toc a { text-decoration: none; color: #fff; transition: 0.3s; }
+        .wiki-toc a:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .wiki-section-title { 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px; 
+            margin-top: 50px; 
+            clear: both;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Ajuste de imágenes para que no rompan el layout en móviles */
+        .wiki-img-right { float: right; margin: 0 0 20px 20px; max-width: 300px; border: 1px solid var(--glass-border); border-radius: 8px; }
+        .wiki-img-left { float: left; margin: 0 20px 20px 0; max-width: 300px; border: 1px solid var(--glass-border); border-radius: 8px; }
+        
+        .content-body { line-height: 1.8; text-align: justify; color: var(--text-muted); }
+        .content-body a { color: var(--primary-color); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .wiki-img-right, .wiki-img-left { float: none; display: block; margin: 20px auto; width: 100%; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="wiki-container" style="padding-top: 120px;">
+        <header style="position: static; background: transparent; border: none; padding: 0; margin-bottom: 40px; display: block;">
+            <span style="color: var(--primary-color); font-family: monospace; letter-spacing: 3px;">ARCHIVO EDC / ANGEL CURIOSIDADES</span>
+            <h1 style="font-size: 3rem; font-weight: 800; margin: 10px 0;">¡BIENVENIDOS A ANGEL CURIOSIDADES!</h1>
+            <p>Comunidad dedicada al arte digital, divulgación y archivo de internet.</p>
+        </header>
+
+        <div class="content-body">
+            <p>Esta plataforma, anteriormente conocida como <strong>EDC El Dato Curioso</strong>, fue creada por el artista digital Angel Cruger en 2017. Actualmente, se integra como un pilar fundamental de <strong>NOTKOMO NETWORKS</strong> para preservar años de investigación y contenido viral.</p>
+
+            <div class="wiki-toc">
+                <h2>SUMARIO</h2>
+                <ul>
+                    <li><a href="#historia">1. Historia y Orígenes</a></li>
+                    <li><a href="#crecimiento">2. Crecimiento y "Guerra Digital"</a></li>
+                    <li><a href="#identidad">3. Identidad Visual (Rainbow Red)</a></li>
+                    <li><a href="#evolucion">4. Evolución a Angel Curiosidades (2025)</a></li>
+                </ul>
+            </div>
+
+            <h2 class="wiki-section-title" id="historia">Historia y Orígenes</h2>
+            <p>Nacido en 2015, el proyecto surgió en una era de desinformación masiva en redes sociales. Angel decidió fundar un espacio de datos reales y verificados. En 2016, este impulso llevó también a la creación de <strong>RIGATHZ</strong>, enfocada en periodismo gamer y otaku.</p>
+
+            <h2 class="wiki-section-title" id="crecimiento">Crecimiento y la "Guerra Digital"</h2>
+            <p>Hacia 2019, la plataforma profesionalizó su contenido, compitiendo orgánicamente contra gigantes de Facebook. Durante las denominadas "guerras digitales", el formato de "100 datos que no sabías de" impulsó la página a sus primeros 10,000 seguidores, destacando por su rigor investigativo.</p>
+
+            <h2 class="wiki-section-title" id="identidad">Identidad visual y Rainbow Red</h2>
+            <p>Operado bajo el sello de <strong>ONESTUDIOS</strong>, el universo visual se centra en su mascota oficial: <strong>Rainbow Red</strong>. Este personaje estilo "Chibi" es el embajador del proyecto, nacido de animaciones cuadro por cuadro creadas entre 2014 y 2016.</p>
+
+            <h2 class="wiki-section-title" id="evolucion">Evolución (2025 - 2026)</h2>
+            <p>En 2025, el proyecto abandonó las siglas EDC para adoptar el nombre definitivo de <strong>Angel Curiosidades</strong>, buscando una conexión más personal. Bajo el eslogan <em>"Mucho más que ver..."</em>, la comunidad hoy supera los 30,000 seguidores y expande su legado a través de NOTKOMO.</p>
+        </div>
+
+        <div style="margin-top: 80px;">
+            <h2 style="color: var(--primary-color);">ÚLTIMAS PUBLICACIONES DE LA COMUNIDAD</h2>
+            <div id="grid-notas-recientes">
+                </div>
+        </div>
+    </main>
+
+    <script src="menu.js"></script>
+
+    <script>
+        function cargarNotasRecientes(json) {
+            var contenedor = document.getElementById('grid-notas-recientes');
+            var html = '';
+            var entradas = json.feed.entry || [];
+            
+            for (var i = 0; i < entradas.length; i++) {
+                var entrada = entradas[i];
+                var titulo = entrada.title.$t;
+                var enlace = entrada.link.find(l => l.rel == 'alternate').href;
+                var imagen = entrada.media$thumbnail ? entrada.media$thumbnail.url.replace('/s72-c/', '/w600-h300-c/') : 'logo.png';
+                var resumen = entrada.summary.$t.substring(0, 150) + '...';
+
+                html += `
+                <div class="news-card">
+                    <div class="news-image"><img src="${imagen}"></div>
+                    <div class="news-content" style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
+                        <span style="color: var(--primary-color); font-size: 0.7rem; font-weight: bold; letter-spacing: 2px;">ARCHIVO RECIENTE</span>
+                        <h3 style="margin: 10px 0; font-size: 1.2rem;">${titulo}</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; flex-grow: 1;">${resumen}</p>
+                        <div style="text-align: right; margin-top: 15px;">
+                            <a href="${enlace}" class="btn">SEGUIR LEYENDO</a>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            contenedor.innerHTML = html;
+        }
+    </script>
+    <script src="https://angelcuriosidades.blogspot.com/feeds/posts/summary?alt=json-in-script&callback=cargarNotasRecientes&max-results=3"></script>
+</body>
+</html>
