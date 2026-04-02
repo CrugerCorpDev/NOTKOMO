@@ -49,8 +49,7 @@
         <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 40px 0;">
 
         <span class="section-label">Actividad Reciente</span>
-        <div id="grid-preview-home">
-            </div>
+        <div id="grid-preview-home"></div>
 
         <a href="bitacora.html" class="btn" style="display: inline-block; margin-top: 30px;">Explorar Bitácora completa</a>
     </main>
@@ -66,7 +65,9 @@
     <script src="noticias.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            inyectarNoticias('grid-preview-home', 3);
+            if (typeof inyectarNoticias === "function") {
+                inyectarNoticias('grid-preview-home', 3);
+            }
         });
     </script>
 </body>
