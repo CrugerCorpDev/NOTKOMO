@@ -1,154 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Oficial | NOTKOMO NETWORKS</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
-    
-    <style>
-        .bitacora-header {
-            text-align: center;
-            padding: 100px 20px 40px;
-            background: linear-gradient(to bottom, var(--bg-alt), var(--bg-main));
-            border-bottom: 1px solid var(--border-color);
-        }
-        .bitacora-header h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-        }
-        .bitacora-header p {
-            color: var(--text-muted);
-            font-family: monospace;
-            letter-spacing: 1px;
-        }
-        .feed-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .article-card {
-            background: var(--bg-alt);
-            border: 1px solid rgba(62, 139, 255, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.05);
-            margin-bottom: 60px;
-        }
-        .article-cover {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid rgba(62, 139, 255, 0.1);
-        }
-        .article-content {
-            padding: 40px;
-        }
-        .article-meta {
-            color: #00B4D8;
-            font-family: monospace;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .article-title {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-top: 0;
-            margin-bottom: 30px;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-        
-        /* Estilos editoriales para el contenido de la nota */
-        .article-body {
-            color: var(--text-main);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-        .article-body p { margin-bottom: 20px; }
-        .article-body img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin: 30px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        /* Para usar las clases img-float-left y img-float-right que te di antes */
-        .article-body img.img-float-left { float: left; max-width: 45%; margin: 10px 20px 10px 0; }
-        .article-body img.img-float-right { float: right; max-width: 45%; margin: 10px 0 10px 20px; }
-        .article-body img.img-banner { width: 100%; display: block; margin: 40px 0; }
-        
-        .article-body h2, .article-body h3 {
-            color: var(--primary-color);
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
-        .article-body blockquote {
-            border-left: 4px solid var(--primary-color);
-            background: rgba(62, 139, 255, 0.05);
-            padding: 15px 20px;
-            color: var(--text-main);
-            font-style: italic;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .article-body a { color: #00B4D8; text-decoration: none; font-weight: 600; }
-        .article-body a:hover { text-decoration: underline; }
-        
-        /* Limpiador de flotantes por si usas imágenes flotantes al final del texto */
-        .article-body::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="bitacora-header">
-        <h1>Bitácora de Notas</h1>
-        <p>[ REGISTRO DATABANK: ACTUALIZACIONES Y CURIOSIDADES ]</p>
-    </header>
-
-    <main class="feed-container" id="feed-noticias">
-        <div style="text-align: center; padding: 50px; color: var(--text-muted); font-family: monospace;">
-            Sincronizando con el servidor...
-        </div>
-    </main>
-
-    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 100px; background: var(--bg-alt);">
-        <p style="font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 <strong>NOTKOMO NETWORKS</strong>. Todos los derechos reservados. <br>
-            <span style="opacity: 0.8;">Propiedad intelectual de Angel Cruger.</span>
-        </p>
-    </footer>
-
-    <script src="menu.js"></script>
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", async () => {
             const contenedor = document.getElementById('feed-noticias');
             try {
-                // Buscamos el archivo maestro que creó tu panel
-                const respuesta = await fetch('noticias.json');
-                if (!respuesta.ok) throw new Error("No se encontró el archivo");
+                // Buscamos el archivo maestro en la raíz de tu sitio
+                const respuesta = await fetch('/noticias.json?v=' + new Date().getTime()); // Evita el caché
+                
+                if (!respuesta.ok) {
+                    throw new Error(`Error HTTP: ${respuesta.status}`);
+                }
                 
                 const data = await respuesta.json();
+                
+                // Imprimimos en consola para ver qué está leyendo
+                console.log("Datos recibidos:", data);
+
                 let articulos = data.articulos || [];
 
                 if (articulos.length === 0) {
-                    contenedor.innerHTML = '<div style="text-align: center; color: var(--primary-color); font-family: monospace; font-size: 1.2rem;">[ EL DATABANK ESTÁ VACÍO ]</div>';
+                    contenedor.innerHTML = '<div style="text-align: center; color: var(--primary-color); font-family: monospace; font-size: 1.2rem;">[ EL DATABANK ESTÁ VACÍO O NO HAY ARTÍCULOS ]</div>';
                     return;
                 }
 
@@ -157,14 +26,13 @@
 
                 // Construimos el HTML de cada nota
                 contenedor.innerHTML = articulos.map(art => {
-                    // Darle formato legible a la fecha
                     const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
                     const fecha = new Date(art.date).toLocaleDateString('es-MX', opcionesFecha);
                     
-                    // Solo renderizamos la portada si existe
-                    const imagenHtml = art.image ? `<img src="${art.image}" class="article-cover" alt="Portada de ${art.title}">` : '';
+                    // Aseguramos que la ruta de la imagen sea absoluta
+                    const rutaImagen = art.image ? (art.image.startsWith('/') ? art.image : '/' + art.image) : '';
+                    const imagenHtml = rutaImagen ? `<img src="${rutaImagen}" class="article-cover" alt="Portada de ${art.title}">` : '';
                     
-                    // Aquí la librería 'marked' convierte tu texto del panel a diseño web real
                     const contenidoHtml = marked.parse(art.body || '');
 
                     return `
@@ -182,10 +50,13 @@
                 }).join('');
 
             } catch (error) {
-                console.error("Error al sincronizar la bitácora:", error);
-                contenedor.innerHTML = '<div style="text-align: center; color: #ff4d4d; font-family: monospace; border: 1px solid rgba(255,0,0,0.2); padding: 30px; border-radius: 8px;">[ ERROR DE TRANSMISIÓN: Imposible conectar con NOTKOMO DATABANK ]</div>';
+                console.error("Error detallado al sincronizar:", error);
+                contenedor.innerHTML = `<div style="text-align: center; color: #ff4d4d; font-family: monospace; border: 1px solid rgba(255,0,0,0.2); padding: 30px; border-radius: 8px;">
+                    [ ERROR DE TRANSMISIÓN ]<br><br>
+                    No se encontró el archivo noticias.json. <br>
+                    Asegúrate de publicar una nota desde el panel para generarlo.<br>
+                    <span style="font-size:0.8em; color:#888;">Detalle: ${error.message}</span>
+                </div>`;
             }
         });
     </script>
-</body>
-</html>
