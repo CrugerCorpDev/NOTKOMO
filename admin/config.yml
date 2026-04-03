@@ -7,12 +7,12 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-  - name: "bitacora"
+  - name: "noticias"  # Mantenemos este nombre para que no se rompa tu panel
     label: "Bitácora / Noticias"
     files:
       - label: "Todas las Noticias"
         name: "lista_noticias"
-        file: "noticias.json" # <--- ESTE ES EL ARCHIVO CLAVE
+        file: "noticias.json" # Aquí le damos la orden estricta del archivo maestro
         fields:
           - label: "Artículos Publicados"
             name: "articulos"
