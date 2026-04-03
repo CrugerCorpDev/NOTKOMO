@@ -3,40 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora | NOTKOMO NETWORKS</title>
+    <title>Bitácora Oficial | NOTKOMO NETWORKS</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    
+    <style>
+        .bitacora-header {
+            text-align: center;
+            padding: 100px 20px 40px;
+            background: linear-gradient(to bottom, var(--bg-alt), var(--bg-main));
+            border-bottom: 1px solid var(--border-color);
+        }
+        .bitacora-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+        .bitacora-header p {
+            color: var(--text-muted);
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+        .feed-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .article-card {
+            background: var(--bg-alt);
+            border: 1px solid rgba(62, 139, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.05);
+            margin-bottom: 60px;
+        }
+        .article-cover {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid rgba(62, 139, 255, 0.1);
+        }
+        .article-content {
+            padding: 40px;
+        }
+        .article-meta {
+            color: #00B4D8;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .article-title {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+        
+        /* Estilos editoriales para el contenido de la nota */
+        .article-body {
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        .article-body p { margin-bottom: 20px; }
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        /* Para usar las clases img-float-left y img-float-right que te di antes */
+        .article-body img.img-float-left { float: left; max-width: 45%; margin: 10px 20px 10px 0; }
+        .article-body img.img-float-right { float: right; max-width: 45%; margin: 10px 0 10px 20px; }
+        .article-body img.img-banner { width: 100%; display: block; margin: 40px 0; }
+        
+        .article-body h2, .article-body h3 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        .article-body blockquote {
+            border-left: 4px solid var(--primary-color);
+            background: rgba(62, 139, 255, 0.05);
+            padding: 15px 20px;
+            color: var(--text-main);
+            font-style: italic;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .article-body a { color: #00B4D8; text-decoration: none; font-weight: 600; }
+        .article-body a:hover { text-decoration: underline; }
+        
+        /* Limpiador de flotantes por si usas imágenes flotantes al final del texto */
+        .article-body::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
-    <section style="padding: 140px 30px 40px; max-width: 1100px; margin: 0 auto;">
-        <span class="section-label">Historial de la Red</span>
-        <h1>BITÁCORA Y ARCHIVO</h1>
-        <p style="color: var(--text-muted);">Repositorio unificado de noticias, curiosidades y actualizaciones de la red NOTKOMO.</p>
-    </section>
 
-    <section id="lista-completa-noticias" style="max-width: 1100px; margin: 0 auto; padding: 0 30px 80px;">
-        </section>
+    <header class="bitacora-header">
+        <h1>Bitácora de Notas</h1>
+        <p>[ REGISTRO DATABANK: ACTUALIZACIONES Y CURIOSIDADES ]</p>
+    </header>
+
+    <main class="feed-container" id="feed-noticias">
+        <div style="text-align: center; padding: 50px; color: var(--text-muted); font-family: monospace;">
+            Sincronizando con el servidor...
+        </div>
+    </main>
+
+    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 100px; background: var(--bg-alt);">
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            © 2026 <strong>NOTKOMO NETWORKS</strong>. Todos los derechos reservados. <br>
+            <span style="opacity: 0.8;">Propiedad intelectual de Angel Cruger.</span>
+        </p>
+    </footer>
 
     <script src="menu.js"></script>
-    <script src="noticias.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const contenedor = document.getElementById('lista-completa-noticias');
-            let html = '';
-            noticias.forEach(nota => {
-                html += `
-                <div class="news-card">
-                    <div class="news-image"><img src="${nota.imagen}"></div>
-                    <div class="news-content" style="padding: 30px; flex: 1; display: flex; flex-direction: column;">
-                        <span style="color: var(--primary-color); font-size: 0.7rem; font-weight: bold; letter-spacing: 2px;">${nota.fecha} | ${nota.categoria}</span>
-                        <h3 style="margin: 15px 0; font-size: 1.5rem; color: #fff;">${nota.titulo}</h3>
-                        <p style="color: var(--text-muted); line-height: 1.8;">${nota.resumen}</p>
-                        <div style="text-align: right; margin-top: auto;">
-                            <a href="${nota.enlace}" class="btn">SEGUIR LEYENDO</a>
-                        </div>
-                    </div>
-                </div>`;
-            });
-            contenedor.innerHTML = html;
+        document.addEventListener("DOMContentLoaded", async () => {
+            const contenedor = document.getElementById('feed-noticias');
+            try {
+                // Buscamos el archivo maestro que creó tu panel
+                const respuesta = await fetch('noticias.json');
+                if (!respuesta.ok) throw new Error("No se encontró el archivo");
+                
+                const data = await respuesta.json();
+                let articulos = data.articulos || [];
+
+                if (articulos.length === 0) {
+                    contenedor.innerHTML = '<div style="text-align: center; color: var(--primary-color); font-family: monospace; font-size: 1.2rem;">[ EL DATABANK ESTÁ VACÍO ]</div>';
+                    return;
+                }
+
+                // Las ordenamos de la más reciente a la más antigua
+                articulos.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                // Construimos el HTML de cada nota
+                contenedor.innerHTML = articulos.map(art => {
+                    // Darle formato legible a la fecha
+                    const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+                    const fecha = new Date(art.date).toLocaleDateString('es-MX', opcionesFecha);
+                    
+                    // Solo renderizamos la portada si existe
+                    const imagenHtml = art.image ? `<img src="${art.image}" class="article-cover" alt="Portada de ${art.title}">` : '';
+                    
+                    // Aquí la librería 'marked' convierte tu texto del panel a diseño web real
+                    const contenidoHtml = marked.parse(art.body || '');
+
+                    return `
+                        <article class="article-card">
+                            ${imagenHtml}
+                            <div class="article-content">
+                                <span class="article-meta">PUBLICADO EL: ${fecha}</span>
+                                <h2 class="article-title">${art.title}</h2>
+                                <div class="article-body">
+                                    ${contenidoHtml}
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+            } catch (error) {
+                console.error("Error al sincronizar la bitácora:", error);
+                contenedor.innerHTML = '<div style="text-align: center; color: #ff4d4d; font-family: monospace; border: 1px solid rgba(255,0,0,0.2); padding: 30px; border-radius: 8px;">[ ERROR DE TRANSMISIÓN: Imposible conectar con NOTKOMO DATABANK ]</div>';
+            }
         });
     </script>
 </body>
