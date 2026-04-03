@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://notkomo.space/index.html</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/angel-curiosidades.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/angel-cruger.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/gdm.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/red-rainbow.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/fundacion-dws.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/movail.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://notkomo.space/bitacora.html</loc>
+    <priority>0.60</priority>
+  </url>
+</urlset>
