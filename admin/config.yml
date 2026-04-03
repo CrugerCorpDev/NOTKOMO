@@ -3,6 +3,7 @@ backend:
   repo: CrugerCorpDev/NOTKOMO
   branch: main
   app_id: Ov23lial4gdwr0Zu5vCN
+  auth_type: pkce
 
 # Aquí se guardarán las fotos que arrastres al panel
 media_folder: "images"
