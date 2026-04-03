@@ -2,7 +2,6 @@ backend:
   name: github
   repo: CrugerCorpDev/NOTKOMO
   branch: main
-  app_id: Ov23lial4gdwr0Zu5vCN
 
 media_folder: "images"
 public_folder: "images"
@@ -13,7 +12,7 @@ collections:
     files:
       - label: "Todas las Noticias"
         name: "lista_noticias"
-        file: "noticias.json" # El archivo maestro que leerá tu web
+        file: "noticias.json" # <--- ESTE ES EL ARCHIVO CLAVE
         fields:
           - label: "Artículos Publicados"
             name: "articulos"
