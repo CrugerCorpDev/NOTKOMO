@@ -9,8 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
     
     <style>
-        /* === ESTILOS DEL MENÚ === */
-        .top-menu { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: rgba(10, 15, 36, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 1000; box-sizing: border-box; }
+        /* === RESET DE ESPACIOS PARA EVITAR COLISIONES === */
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 70px; /* Esto empuja TODA la página hacia abajo para librar el menú fijo */
+        }
+
+        /* === 1. BLOQUE DEL MENÚ (Fondo sólido, sin translucidez) === */
+        .top-menu { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px; display: flex; 
+            justify-content: space-between; align-items: center; padding: 0 40px; 
+            background: #0a0f24; /* Color sólido oscuro */
+            border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 1000; box-sizing: border-box; 
+        }
         .logo-link { text-decoration: none; display: flex; align-items: center; }
         .logo-text { color: #fff; font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
         
@@ -18,13 +30,13 @@
         .nav-link { color: #aaa; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; transition: color 0.3s; }
         .nav-link:hover, .nav-link.active { color: #3E8BFF; }
         
-        /* SOLUCIÓN: El botón hamburguesa ya no se oculta en PC, siempre estará visible */
         .hamburger-btn { display: flex; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
         .hamburger-btn span { display: block; width: 25px; height: 2px; background-color: #fff; transition: 0.3s; }
 
+        /* === MENÚ LATERAL === */
         .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: #0b1120; z-index: 2000; transition: right 0.4s ease; border-left: 1px solid rgba(62,139,255,0.1); padding: 40px 20px; box-sizing: border-box; }
         .side-menu.open { right: 0; }
-        .side-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1500; display: none; backdrop-filter: blur(3px); }
+        .side-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1500; display: none; }
         .side-menu-overlay.show { display: block; }
         .close-menu-btn { position: absolute; top: 20px; right: 25px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
         .side-nav-list { list-style: none; padding: 0; margin-top: 40px; }
@@ -35,25 +47,27 @@
 
         @media (max-width: 768px) {
             .menu-links { display: none; }
-            .top-menu { padding: 15px 20px; }
+            .top-menu { padding: 0 20px; }
         }
 
-        /* === SOLUCIÓN AL TÍTULO ENORME === */
+        /* === 2. BLOQUE DE LA CABECERA (Espacio reservado y rígido) === */
         .bitacora-header {
+            display: block; /* Asegura que tome todo el ancho y empuje lo de abajo */
             text-align: center;
-            padding: 100px 20px 20px; /* Solo el margen necesario para evitar el menú flotante */
-            background: transparent; /* Sin fondo de colores */
-            border: none;
+            padding: 50px 20px; 
+            margin-bottom: 50px; /* Margen estricto antes de que empiecen las notas */
+            background: var(--bg-alt); /* Le damos un fondo ligero para separarlo visualmente */
+            border-bottom: 1px solid var(--border-color);
         }
         .bitacora-header h1 {
-            font-size: 2.2rem; /* Tamaño normal */
+            font-size: 2.2rem; 
             color: var(--primary-color);
-            margin: 0 0 5px 0;
+            margin: 0 0 10px 0;
             text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
         }
 
-        /* === DISEÑO DE TARJETAS (COMPACTAS Y LIMPIAS) === */
-        .feed-container { max-width: 900px; margin: 20px auto 60px; padding: 0 20px; }
+        /* === 3. BLOQUE DE NOTAS === */
+        .feed-container { display: block; max-width: 900px; margin: 0 auto 80px auto; padding: 0 20px; }
         
         .nota-card {
             display: flex;
@@ -61,7 +75,7 @@
             background: var(--bg-alt);
             border: 1px solid rgba(62, 139, 255, 0.2);
             border-radius: 8px;
-            padding: 20px; /* Un poco menos de aire para que sea compacta */
+            padding: 20px; 
             gap: 25px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
@@ -70,7 +84,7 @@
         .nota-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(62, 139, 255, 0.15); }
         
         .nota-img-container {
-            width: 220px; /* Miniatura más pequeña y elegante */
+            width: 220px; 
             height: 160px;
             flex-shrink: 0; 
             border-radius: 6px;
@@ -92,18 +106,17 @@
             align-self: flex-end; margin-top: auto;
             background: linear-gradient(135deg, #3E8BFF, #00B4D8);
             color: white; padding: 8px 20px; text-decoration: none; border-radius: 4px;
-            font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s;
+            font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; border: none;
         }
         .btn-leer:hover { box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3); }
 
-        /* VISTA NOTA COMPLETA */
         .nota-completa { background: var(--bg-alt); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
         .nota-completa img { max-width: 100%; height: auto; border-radius: 6px; margin: 30px 0; }
         .btn-volver { display: inline-block; margin-bottom: 25px; color: var(--primary-color); text-decoration: none; font-weight: bold; font-family: monospace; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
             .nota-card { flex-direction: column; padding: 15px; gap: 15px; }
-            .nota-img-container { width: 100%; height: 180px; }
+            .nota-img-container { width: 100%; height: auto; aspect-ratio: 16/9; }
             .nota-info { min-height: auto; }
             .btn-leer { margin-top: 15px; align-self: stretch; text-align: center; }
         }
@@ -213,7 +226,7 @@
                         const { datos, cuerpo } = parsearNota(texto);
                         
                         const fechaFormat = new Date(datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
-                        const imagenHero = datos.image ? `<img src="${datos.image.startsWith('/') ? datos.image : '/' + datos.image}" style="width:100%; max-height:400px; object-fit:cover;">` : '';
+                        const imagenHero = datos.image ? `<img src="${datos.image.startsWith('/') ? datos.image : '/' + datos.image}" style="width:100%; max-height:400px; object-fit:cover; border-radius: 6px;">` : '';
 
                         contenedor.innerHTML = `
                             <a href="bitacora.html" class="btn-volver">← VOLVER AL MURO</a>
@@ -233,6 +246,7 @@
                 const promesasNotas = archivos.map(arch => fetch(arch.download_url + `?t=${new Date().getTime()}`).then(r => r.text()).then(t => ({ nombre: arch.name, ...parsearNota(t) })));
                 const notasListas = await Promise.all(promesasNotas);
                 
+                // === ORDEN CRONOLÓGICO GARANTIZADO ===
                 notasListas.sort((a, b) => new Date(b.datos.date || 0) - new Date(a.datos.date || 0));
 
                 contenedor.innerHTML = notasListas.map(nota => {
