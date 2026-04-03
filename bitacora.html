@@ -52,18 +52,26 @@
 
         /* === 2. BLOQUE DE LA CABECERA (Espacio reservado y rígido) === */
         .bitacora-header {
-            display: block; /* Asegura que tome todo el ancho y empuje lo de abajo */
-            text-align: center;
-            padding: 50px 20px; 
-            margin-bottom: 50px; /* Margen estricto antes de que empiecen las notas */
-            background: var(--bg-alt); /* Le damos un fondo ligero para separarlo visualmente */
-            border-bottom: 1px solid var(--border-color);
+            position: relative; /* Fuerza a que respete el flujo normal del documento */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 60px 20px; 
+            margin-bottom: 50px; /* Separación estricta con las notas */
+            background: var(--bg-alt, #0b1120); /* Color de respaldo */
+            border-bottom: 1px solid rgba(62,139,255,0.2);
+            box-sizing: border-box; /* Evita que el padding rompa el ancho */
         }
         .bitacora-header h1 {
-            font-size: 2.2rem; 
-            color: var(--primary-color);
+            font-size: 2.5rem; 
+            color: #3E8BFF; /* Forzamos el color por si falla la variable */
             margin: 0 0 10px 0;
-            text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 800;
+            line-height: 1.2;
         }
 
         /* === 3. BLOQUE DE NOTAS === */
@@ -159,10 +167,10 @@
         </div>
     </aside>
 
-    <header class="bitacora-header">
-        <h1>Bitácora de Notas</h1>
-        <p style="font-family: monospace; color: var(--text-muted); margin: 0; letter-spacing: 2px;">[ REGISTRO DATABANK ]</p>
-    </header>
+    <div class="bitacora-header">
+        <h1>BITÁCORA DE NOTAS</h1>
+        <p style="font-family: monospace; color: #aaa; margin: 0; letter-spacing: 2px;">[ REGISTRO DATABANK ]</p>
+    </div>
 
     <main class="feed-container" id="feed-noticias">
         <div style="text-align: center; padding: 50px; color: var(--text-muted); font-family: monospace;">
