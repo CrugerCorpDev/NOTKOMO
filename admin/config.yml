@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: CrugerCorpDev/NOTKOMO
+  branch: main
+
+# Aquí se guardarán las fotos que arrastres al panel
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "noticias"
+    label: "Bitácora / Noticias"
+    folder: "noticias" # La carpeta en GitHub donde se guardarán los textos
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título de la Nota", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Imagen de Portada", name: "image", widget: "image", required: false}
+      - {label: "Contenido de la Noticia", name: "body", widget: "markdown"}
