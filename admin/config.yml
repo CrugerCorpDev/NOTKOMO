@@ -2,8 +2,6 @@ backend:
   name: github
   repo: CrugerCorpDev/NOTKOMO
   branch: main
-  app_id: Ov23lial4gdwr0Zu5vCN
-  auth_type: pkce
 
 # Aquí se guardarán las fotos que arrastres al panel
 media_folder: "images"
@@ -12,7 +10,7 @@ public_folder: "images"
 collections:
   - name: "noticias"
     label: "Bitácora / Noticias"
-    folder: "noticias" # La carpeta en GitHub donde se guardarán los textos
+    folder: "noticias" 
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
