@@ -4,7 +4,6 @@ async function inyectarNoticias(contenedorId, limite = null) {
 
     const repo = "CrugerCorpDev/NOTKOMO";
 
-    // Función auxiliar para extraer datos del encabezado de los archivos Markdown (.md)
     function parsearNota(textoMarkdown) {
         const match = textoMarkdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
         if (!match) return { datos: {}, cuerpo: textoMarkdown };
@@ -23,13 +22,11 @@ async function inyectarNoticias(contenedorId, limite = null) {
     }
 
     try {
-        // 1. Obtener la lista de archivos directamente de la carpeta "noticias" en GitHub
         const urlApi = `https://api.github.com/repos/${repo}/contents/noticias?t=${new Date().getTime()}`;
         const respuestaLista = await fetch(urlApi);
         if (!respuestaLista.ok) throw new Error("No se pudo conectar con el repositorio");
         
         let archivos = await respuestaLista.json();
-        // Filtrar solo los que sean notas Markdown
         archivos = archivos.filter(arch => arch.name.endsWith('.md'));
 
         if (archivos.length === 0) {
@@ -37,7 +34,6 @@ async function inyectarNoticias(contenedorId, limite = null) {
             return;
         }
 
-        // 2. Descargar el contenido de cada archivo .md
         const promesasNotas = archivos.map(arch => 
             fetch(arch.download_url + `?t=${new Date().getTime()}`)
             .then(r => r.text())
@@ -46,25 +42,21 @@ async function inyectarNoticias(contenedorId, limite = null) {
         
         let notasListas = await Promise.all(promesasNotas);
 
-        // 3. Ordenar cronológicamente (las más nuevas primero)
         notasListas.sort((a, b) => new Date(b.datos.date || 0) - new Date(a.datos.date || 0));
 
-        // 4. Aplicar el límite (ej. solo las 3 más recientes)
         if (limite) {
             notasListas = notasListas.slice(0, limite);
         }
 
-        // 5. Inyectar el HTML en las páginas principales
         contenedor.innerHTML = notasListas.map(nota => {
             const fecha = new Date(nota.datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
-            
-            // Limpiar el texto markdown (quitar asteriscos, corchetes, etc.) para el pequeño resumen
             const resumen = nota.cuerpo.replace(/[#_*`>\[\]]/g, '').substring(0, 140) + '...';
             
-            // Procesar la imagen (si existe)
             const rutaImagen = nota.datos.image ? (nota.datos.image.startsWith('/') ? nota.datos.image : '/' + nota.datos.image) : '';
+            
+            // AQUÍ ESTÁ LA MAGIA DEL RECORTE (object-fit: cover; object-position: center;)
             const boxImagen = rutaImagen 
-                ? `<img src="${rutaImagen}" alt="${nota.datos.title}" style="width: 100%; height: 200px; object-fit: cover;">` 
+                ? `<img src="${rutaImagen}" alt="${nota.datos.title}" style="width: 100%; height: 200px; object-fit: cover; object-position: center; display: block; border-bottom: 1px solid rgba(62, 139, 255, 0.1);">` 
                 : `<div style="height: 200px; background: linear-gradient(135deg, #1a2a40, #3E8BFF); display: flex; align-items: center; justify-content: center; color: white; font-family: monospace; font-size: 0.9rem;">NOTKOMO DATABANK</div>`;
 
             return `
