@@ -32,30 +32,37 @@
         .img-float-right { float: right; margin: 5px 0 20px 25px; max-width: 300px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .quote-box { background: var(--bg-alt); border-left: 4px solid #2A9D8F; padding: 20px 25px; margin: 20px 0; border-radius: 4px; font-style: italic; color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
         
+        .wiki-section-title {
+            font-size: 1.8rem; color: #111; border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px; margin-top: 50px; margin-bottom: 20px;
+        }
+
+        .clearfix::after { content: ""; clear: both; display: table; }
+
         @media (max-width: 768px) { .wiki-infobox, .img-float-left, .img-float-right { float: none; width: 100%; max-width: 100%; margin: 0 0 30px 0; box-sizing: border-box; } }
     </style>
 </head>
 <body>
 
-    <main class="wiki-container" style="padding-top: 120px;">
+    <main class="wiki-container" style="padding-top: 120px; max-width: 1000px; margin: 0 auto; padding-left: 20px; padding-right: 20px;">
         
         <header style="position: static; background: transparent; border: none; padding: 0; margin-bottom: 30px; display: block;">
-            <span style="color: #2A9D8F; font-family: monospace; letter-spacing: 3px;">INICIATIVA FILANTRÓPICA INDEPENDIENTE</span>
+            <span style="color: #2A9D8F; font-family: monospace; letter-spacing: 3px; font-weight: 600;">INICIATIVA FILANTRÓPICA INDEPENDIENTE</span>
             <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin: 10px 0;">FUNDACIÓN DWS</h1>
             <p style="font-size: 1.2rem; color: var(--text-muted); font-weight: bold;">Dreams With Soul (Sueños con Alma)</p>
         </header>
 
-        <div class="content-body">
+        <div class="content-body" style="font-size: 1.05rem; line-height: 1.8; color: #333;">
             
             <div class="wiki-infobox">
                 <div class="wiki-infobox-title">Fundación DWS</div>
-                <div style="text-align: center; margin-bottom: 15px; padding: 20px; border: 1px dashed var(--border-color); background: var(--bg-main); border-radius: 4px;">
-                     <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold;">[LOGO DWS AQUÍ]</span>
-                     </div>
+                <div style="text-align: center; margin-bottom: 15px; padding: 15px; border-bottom: 1px solid var(--border-color); background: #fff;">
+                     <img src="dws_logo_circular.png" alt="Logo Fundación DWS" style="max-width: 200px; margin: 0 auto; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </div>
                 
                 <div class="wiki-infobox-row">
                     <div class="wiki-infobox-label">Fundador</div>
-                    <div class="wiki-infobox-data"><a href="angel-cruger.html">Angel Cruger</a></div>
+                    <div class="wiki-infobox-data"><a href="angel-cruger.html" style="color: #2A9D8F; font-weight: bold;">Angel Cruger</a></div>
                 </div>
                 <div class="wiki-infobox-row">
                     <div class="wiki-infobox-label">Fundación</div>
@@ -83,21 +90,25 @@
                 </div>
             </div>
 
-            <div class="wiki-toc">
-                <h2>SUMARIO</h2>
-                <ul>
-                    <li><a href="#introduccion">1. Introducción</a></li>
-                    <li><a href="#filosofia">2. Significado y Filosofía</a></li>
-                    <li><a href="#operacion">3. Operación y Expansión</a></li>
-                    <li><a href="#altruismo">4. Compromiso Altruista y Modelo Independiente</a></li>
-                    <li><a href="#campanas">5. Campañas de Apoyo</a></li>
+            <div class="wiki-toc" style="background: #f9f9f9; border: 1px solid #e0e0e0; border-left: 4px solid #2A9D8F; padding: 20px 25px; border-radius: 4px; margin: 30px 0; max-width: 400px;">
+                <h2 style="margin-top: 0; font-size: 1rem; color: #333; text-transform: uppercase;">SUMARIO</h2>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="#introduccion" style="color: #0645ad; text-decoration: none;">1. Introducción</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#filosofia" style="color: #0645ad; text-decoration: none;">2. Significado y Filosofía</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#operacion" style="color: #0645ad; text-decoration: none;">3. Operación y Expansión</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#altruismo" style="color: #0645ad; text-decoration: none;">4. Compromiso Altruista y Modelo Independiente</a></li>
+                    <li><a href="#campanas" style="color: #0645ad; text-decoration: none;">5. Campañas de Apoyo</a></li>
                 </ul>
             </div>
             <div style="clear: both;"></div>
 
             <h2 class="wiki-section-title" id="introduccion">Introducción</h2>
-            <p>La Fundación DWS tiene una base humanista; no busca centrarse en el apoyo de contenidos mediáticos de otras organizaciones ni pasar a ser el brazo de <em>clickbait</em> de creadores de contenido. Desde hace muchos años, la Fundación DWS, creada por Angel Cruger en 2017, busca apoyar a personas que atraviesan momentos o situaciones difíciles, enfocándose principalmente en niños, niñas y jóvenes en etapas de vulnerabilidad.</p>
-            <p>No se busca un alcance mediático, sino llegar a quienes realmente ocupan el recurso, ya sea con apoyos económicos o en especie a través de campañas anunciadas dentro de los proyectos activos del fundador. Un ejemplo de esto es la campaña de diciembre de 2025, anunciada en el medio <a href="angel-curiosidades.html">Angel Curiosidades</a> a través de su canal principal (aprovechando su alcance y seguidores). En esta iniciativa se buscaba ofrecer de manera gratuita equipos de nebulizadores portátiles y aparatos auditivos (limitados) a personas que realmente los necesitaran, sin exigir likes, sin condicionarlos a seguir la página y sin necesidad de dejar comentarios públicos. DWS no busca financiamiento de terceros; es completamente autónoma y opera bajo campañas específicas cuando existe desabasto o necesidad, siempre que se cuente con los recursos para financiar estas acciones de manera directa.</p>
+            <p>La Fundación DWS tiene una base humanista; no busca centrarse en el apoyo de contenidos mediáticos de otras organizaciones ni pasar a ser el brazo de <em>clickbait</em> de creadores de contenido. Desde hace muchos años, la Fundación DWS, creada por <a href="angel-cruger.html" style="color: #2A9D8F; font-weight: 600; text-decoration: none;">Angel Cruger</a> en 2017, busca apoyar a personas que atraviesan momentos o situaciones difíciles, enfocándose principalmente en niños, niñas y jóvenes en etapas de vulnerabilidad.</p>
+            <p>No se busca un alcance mediático, sino llegar a quienes realmente ocupan el recurso, ya sea con apoyos económicos o en especie a través de campañas anunciadas dentro de los proyectos activos del fundador. Un ejemplo de esto es la campaña de diciembre de 2025, anunciada en el medio <a href="angel-curiosidades.html" style="color: #2A9D8F; font-weight: 600; text-decoration: none;">Angel Curiosidades</a> a través de su canal principal (aprovechando su alcance y seguidores). En esta iniciativa se buscaba ofrecer de manera gratuita equipos de nebulizadores portátiles y aparatos auditivos (limitados) a personas que realmente los necesitaran, sin exigir likes, sin condicionarlos a seguir la página y sin necesidad de dejar comentarios públicos. DWS no busca financiamiento de terceros; es completamente autónoma y opera bajo campañas específicas cuando existe desabasto o necesidad, siempre que se cuente con los recursos para financiar estas acciones de manera directa.</p>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="dws_banner_rojo.jpg" alt="DWS Dreams With Soul Banner" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            </div>
 
             <h2 class="wiki-section-title" id="filosofia">Significado y Filosofía</h2>
             <p>DWS significa <strong>Dreams With Soul</strong> (en español, <em>Sueños con Alma</em>). Es una manera de reflejar el enfoque humanista y la visión del fundador a través de pequeñas acciones que permiten que los recursos lleguen a las personas sin la necesidad de exponerlas. Con ello, se busca evitar la viralización de la carencia y humanizar las adversidades que enfrentan los individuos. En la actualidad, muchas ayudas suelen estar condicionadas a la exposición pública de los afectados, lo que provoca que muchas personas decidan no recurrir a estos apoyos para evitar que su imagen se vincule con la precariedad y la vergüenza. La filosofía de DWS es resiliente ante esto, protegiendo la dignidad de los beneficiarios.</p>
@@ -109,17 +120,17 @@
             <p>Debe entenderse que la Fundación DWS no busca ser llamativa ni conseguir aportaciones externas. Aunque sus campañas son esporádicas, no requieren emitir declaraciones públicas ni reportes de impacto a terceros, lo que convierte a este modelo en el ideal para proteger la privacidad de las personas beneficiadas.</p>
 
             <h2 class="wiki-section-title" id="altruismo">El compromiso altruista y la operación independiente</h2>
-            <div style="float: right; margin: 0 0 20px 20px; width: 280px; text-align: center; border: 1px dashed var(--border-color); padding: 10px; border-radius: 4px; background: var(--bg-alt);">
-                 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold;">[IMAGEN DE DONATIVOS/EQUIPO]</span>
-            </div>
 
             <p>Desde su origen, la Fundación DWS ha operado mediante iniciativas periódicas, ya que el flujo de los apoyos responde directamente a la capacidad y los recursos personales del fundador en cada temporada. Su misión central se ha mantenido intacta: ayudar de forma directa a personas que enfrentan situaciones adversas, con especial atención en niños, niñas y jóvenes, facilitando recursos económicos o herramientas para combatir malos hábitos y fomentar la educación y el desarrollo autodidacta.</p>
             <p>Al tratarse de una iniciativa de filantropía personal e independiente, DWS opera bajo un modelo 100% digital y sin oficinas físicas. Esta agilidad estructural es intencional: al financiarse exclusivamente con capital propio y no aceptar fondos ni donativos de terceros, DWS funciona de persona a persona. Esto elimina las barreras burocráticas institucionales y permite que la ayuda llegue de manera inmediata, silenciosa y verdaderamente altruista a quienes más lo necesitan, garantizando que el único objetivo sea el beneficio social genuino.</p>
 
-            <div style="clear: both;"></div>
-
             <h2 class="wiki-section-title" id="campanas">Campañas de Apoyo</h2>
-            <p>El 26 de Diciembre de 2025 la Fundación DWS anuncio junto a <a href="angel-curiosidades.html">Angel Curiosidades</a> en la pagina oficial AC el cierre de la ultima campaña (más reciente) sobre apoyo de donación de equipos médicos (dispositivos médicos que no requieren permisos o receta medica) los cuales eran Nebulizadores portátiles y Aparatos auditivos (solo dispositivos). La campaña buscaba apoyar de manera directa a personas que los necesitaran, ya sea adultos mayores o niños y adolescentes.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="campana_dws.png" alt="Campaña DWS Navidad" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+            </div>
+
+            <p>El 26 de Diciembre de 2025 la Fundación DWS anuncio junto a <a href="angel-curiosidades.html" style="color: #2A9D8F; font-weight: 600; text-decoration: none;">Angel Curiosidades</a> en la pagina oficial AC el cierre de la ultima campaña (más reciente) sobre apoyo de donación de equipos médicos (dispositivos médicos que no requieren permisos o receta medica) los cuales eran Nebulizadores portátiles y Aparatos auditivos (solo dispositivos). La campaña buscaba apoyar de manera directa a personas que los necesitaran, ya sea adultos mayores o niños y adolescentes.</p>
             <p>Se publico a principios de Diciembre del mismo año pero se estuvo gestionando desde Noviembre de 2025. Acompañado del siguiente mensaje:</p>
 
             <div class="quote-box">
@@ -135,6 +146,10 @@
 
         </div>
     </main>
+
+    <footer style="text-align: center; padding: 40px; margin-top: 50px; font-family: monospace; color: #888;">
+        &copy; 2026 <a href="index.html" style="color: inherit;">NOTKOMO NETWORKS</a>
+    </footer>
 
     <script src="menu.js"></script>
 </body>
