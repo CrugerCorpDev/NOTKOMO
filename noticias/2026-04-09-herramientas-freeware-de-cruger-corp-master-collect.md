@@ -6,8 +6,6 @@ image: /images/1770685599933316-0.png
 
 ### Software Master Collect Info v1.1.2
 
-![](/images/1770685599933316-0.png)
-
 Curiosos les dejo el enlace para descargar GRATIS nuestro software libre. Herramienta útil para validación de memorias, estamos por liberar otras herramientas gratuitas (no son Open Source) para el entorno de Windows.
 
 y les comento que además de DARK ZONE y Metodologías de Inteligencia, estoy desarrollando mi propia Red Social de modelo cifrado de extremo a extremo, es debido a ello toda la ausencia.
