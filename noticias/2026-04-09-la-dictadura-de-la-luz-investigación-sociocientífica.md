@@ -1,7 +1,7 @@
 ---
 title: La dictadura de la luz investigación sociocientífica
 date: 2025-12-26T08:43:00
-image: /images/1766811416286410-0.png
+image: /images/1766811416286410-0 (1).png
 ---
 
 Está es una investigación especial realizada en 2023 y actualizada durante 2025.
