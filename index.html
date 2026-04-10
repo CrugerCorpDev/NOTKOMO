@@ -35,16 +35,65 @@
         
         .section-label { color: var(--primary-color); font-family: monospace; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; text-align: center; }
 
+        /* === GRID DE NOTAS (3 Columnas) === */
         #grid-preview-home {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
+
+        /* === CAJA DE LLAMADO A LA ACCIÓN (CTA NOTICIAS) === */
+        .cta-noticias {
+            background-color: rgba(62, 139, 255, 0.03); 
+            border: 1px solid rgba(62, 139, 255, 0.2); 
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.05);
+        }
+        .cta-noticias h3 {
+            color: #3E8BFF; 
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .cta-noticias p {
+            color: #888;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .btn-notkomo {
+            background: linear-gradient(135deg, #3E8BFF, #00B4D8); 
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            letter-spacing: 1px;
+            border: none;
+        }
+        .btn-notkomo:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3); 
+        }
+
+        /* Responsividad */
         @media (max-width: 900px) {
             #grid-preview-home { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) { 
             #grid-preview-home { grid-template-columns: 1fr; }
+            .cta-noticias { padding: 30px 20px; }
         }
 
     </style>
@@ -72,7 +121,8 @@
             </p>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+        <span class="section-label">Últimas actualizaciones</span>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin-bottom: 40px;">
 
         <div id="grid-preview-home"></div>
 
@@ -95,6 +145,7 @@
     <script src="noticias.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Inyectamos las 3 notas para que aparezcan arriba del botón
             if (typeof inyectarNoticias === "function") {
                 inyectarNoticias('grid-preview-home', 3);
             }
