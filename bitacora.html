@@ -9,14 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
     
     <style>
-        /* === RESET DE ESPACIOS PARA EVITAR COLISIONES === */
+        /* === ESTILOS INCRUSTADOS (MODIFICADOS) === */
+
+        /* RESET DE ESPACIOS */
         body {
             margin: 0;
             padding: 0;
-            padding-top: 70px; /* Esto empuja TODA la página hacia abajo para librar el menú fijo */
+            padding-top: 70px; /* Empuja el contenido bajo el menú fijo */
         }
 
-        /* === 1. BLOQUE DEL MENÚ (Fondo sólido, sin translucidez) === */
+        /* === 1. MENÚ (Fondo sólido oscuro) === */
         .top-menu { 
             position: fixed; top: 0; left: 0; width: 100%; height: 70px; display: flex; 
             justify-content: space-between; align-items: center; padding: 0 40px; 
@@ -50,7 +52,7 @@
             .top-menu { padding: 0 20px; }
         }
 
-        /* === 2. BLOQUE DE LA CABECERA === */
+        /* === 2. CABECERA DE LA SECCIÓN (MODIFICADO) === */
         .bitacora-header {
             position: relative; 
             display: flex;
@@ -58,57 +60,72 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding: 60px 20px; 
-            margin-bottom: 40px; 
-            background: var(--bg-alt, #f8f9fa); /* Vuelve a tu fondo claro */
+            padding: 80px 20px; 
+            margin-bottom: 50px; 
+            background: var(--bg-alt, #f8f9fa); /* Fondo claro por defecto */
             border-bottom: 1px solid rgba(0,0,0,0.1);
             box-sizing: border-box; 
         }
         .bitacora-header h1 {
-            font-size: 2.5rem; 
-            color: #0000FF; /* Rojo elegante, no de advertencia */
+            font-size: 2.8rem; 
+            color: #3E8BFF; /* Azul del botón de "seguir leyendo" */
             margin: 0;
             text-transform: uppercase; 
-            letter-spacing: 2px; 
+            letter-spacing: 3px; 
             font-weight: 800;
             line-height: 1.2;
             text-align: center;
         }
+        /* NUEVO SUBTÍTULO */
+        .bitacora-subtitle {
+            font-size: 1.1rem;
+            color: #3E8BFF; /* Mismo azul que el h1 */
+            margin: 15px 0 0 0;
+            text-align: center;
+            font-weight: 400;
+            max-width: 800px;
+            line-height: 1.6;
+        }
 
-        /* === NUEVA CAJA DE DISCLAIMER === */
+        /* === 3. CAJA DE DISCLAIMER (MODIFICADO - Estilo banner/cita) === */
         .disclaimer-box {
             display: flex;
-            align-items: center; /* Centra el texto verticalmente con la imagen */
-            gap: 30px;
-            background: #ffffff;
-            border: 1px solid rgba(0,0,0,0.1);
+            align-items: center; 
+            gap: 40px; 
+            background: #0a0f24; /* Fondo oscuro del menú */
+            border: 1px solid rgba(62,139,255,0.1); /* Borde azul tenue */
             border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            padding: 40px; 
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
         }
+        /* IMAGEN MÁS GRANDE */
         .disclaimer-img {
-            width: 150px; /* Imagen mucho más grande */
-            height: 150px;
+            width: 220px; /* Tamaño mucho más grande */
+            height: 220px;
             border-radius: 8px;
             object-fit: cover;
             flex-shrink: 0;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(62,139,255,0.2); 
         }
+        /* TEXTO MÁS PEQUEÑO Y CLARO (Estilo cita) */
         .disclaimer-text {
-            color: #333333; /* Negro tenue */
-            font-size: 0.85rem;
+            color: #aaa; /* Gris claro para contraste con fondo oscuro */
+            font-size: 0.8rem; /* Tamaño más pequeño */
             line-height: 1.8;
             text-align: justify;
             margin: 0;
+            padding-left: 20px; 
+            border-left: 2px solid #3E8BFF; /* Borde lateral estilo cita */
         }
 
         @media (max-width: 768px) {
-            .disclaimer-box { flex-direction: column; text-align: center; padding: 20px; }
-            .disclaimer-text { text-align: center; }
+            .disclaimer-box { flex-direction: column; text-align: center; padding: 25px; gap: 20px; }
+            .disclaimer-text { text-align: center; border-left: none; padding-left: 0; }
+            .disclaimer-img { width: 150px; height: 150px; } 
         }
 
-        /* === 3. BLOQUE DE NOTAS === */
+        /* === 4. BLOQUE DE NOTAS (Resto de la página) === */
         .feed-container { display: block; max-width: 900px; margin: 0 auto 80px auto; padding: 0 20px; }
         
         .nota-card {
@@ -203,17 +220,11 @@
 
     <div class="bitacora-header">
         <h1>SECCIÓN DE NOTAS Y PUBLICACIONES</h1>
+        <p class="bitacora-subtitle">En esta sección usted encontrará nuestras notas más recientes ordenadas cronológicamente según nuestro repositorio, extraídas de Facebook, Blogger, Wiki y otros espacios donde Angel Curiosidades está presente (incluyendo redes sociales).</p>
     </div>
 
     <main class="feed-container" id="feed-noticias">
         
-        <div class="disclaimer-box">
-            <img src="red_rainbow_perfil.jpg" alt="Perfil Red Rainbow" class="disclaimer-img">
-            <p class="disclaimer-text">
-                El contenido presentado en esta sección es producto de investigación y recopilación de diversas fuentes informativas. No obstante, es fundamental señalar que las opiniones, temas y datos compartidos en este espacio no reflejan necesariamente la postura oficial de NOTKOMO NETWORKS, Angel Curiosidades o Angel Cruger. El material se distribuye con fines exclusivamente informativos y educativos. A pesar de los esfuerzos por garantizar la precisión, pueden existir discrepancias entre las fuentes consultadas o variaciones en los puntos de vista expuestos. Si desea utilizar esta información como referencia confiable, se requiere la mención explícita al sitio de obtención y el contraste riguroso de los datos. Todas las imágenes, marcas comerciales o personales, logotipos y demás material visual corresponden a sus respectivos titulares; se utilizan únicamente a manera de contenido ilustrativo o informativo y no implican respaldo por parte de sus dueños. Todos los derechos reservados. Portal creado desde 2015. La información presentada podría haber cambiado ligeramente desde la exportación de los datos iniciales (cronología de publicación original).
-            </p>
-        </div>
-
         <div style="padding: 40px 20px; color: #222222; background: #ffffff; border: 1px solid rgba(62,139,255,0.1); border-radius: 8px;">
             <h2 style="color: #3E8BFF; margin-top: 0;">Repositorio y Archivo de Noticias</h2>
             <p style="line-height: 1.8; color: #666666;">
@@ -247,6 +258,16 @@
         const urlParams = new URLSearchParams(window.location.search);
         const notaABrir = urlParams.get('nota');
 
+        // Texto del disclaimer (mismo que antes, solo cambia el estilo)
+        const disclaimerHtml = `
+            <div class="disclaimer-box">
+                <img src="red_rainbow_perfil.jpg" alt="Perfil Red Rainbow" class="disclaimer-img">
+                <p class="disclaimer-text">
+                    El contenido presentado en esta sección es producto de investigación y recopilación de diversas fuentes informativas. No obstante, es fundamental señalar que las opiniones, temas y datos compartidos en este espacio no reflejan necesariamente la postura oficial de NOTKOMO NETWORKS, Angel Curiosidades o Angel Cruger. El material se distribuye con fines exclusivamente informativos y educativos. A pesar de los esfuerzos por garantizar la precisión, pueden existir discrepancias entre las fuentes consultadas o variaciones en los puntos de vista expuestos. Si desea utilizar esta información como referencia confiable, se requiere la mención explícita al sitio de obtención y el contraste riguroso de los datos. Todas las imágenes, marcas comerciales o personales, logotipos y demás material visual corresponden a sus respectivos titulares; se utilizan únicamente a manera de contenido ilustrativo o informativo y no implican respaldo por parte de sus dueños. Todos los derechos reservados. Portal creado desde 2015. La información presentada podría haber cambiado ligeramente desde la exportación de los datos iniciales (cronología de publicación original).
+                </p>
+            </div>
+        `;
+
         function parsearNota(textoMarkdown) {
             const match = textoMarkdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
             if (!match) return { datos: {}, cuerpo: textoMarkdown };
@@ -274,11 +295,13 @@
                 archivos = archivos.filter(arch => arch.name.endsWith('.md'));
 
                 if (archivos.length === 0) {
-                    contenedor.innerHTML = '<div style="text-align: center; color: #3E8BFF;">[ NO HAY NOTAS AÚN ]</div>';
+                    // Contenedor solo para el disclaimer si no hay notas
+                    contenedor.innerHTML = disclaimerHtml + '<div style="text-align: center; color: #3E8BFF;">[ NO HAY NOTAS AÚN ]</div>';
                     return;
                 }
 
                 if (notaABrir) {
+                    // Abrir una nota individual
                     const archivoSeleccionado = archivos.find(a => a.name === notaABrir);
                     if(archivoSeleccionado) {
                         const resNota = await fetch(archivoSeleccionado.download_url + `?t=${new Date().getTime()}`);
@@ -303,19 +326,14 @@
                     }
                 }
 
+                // Cargar todas las notas como tarjetas
                 const promesasNotas = archivos.map(arch => fetch(arch.download_url + `?t=${new Date().getTime()}`).then(r => r.text()).then(t => ({ nombre: arch.name, ...parsearNota(t) })));
                 const notasListas = await Promise.all(promesasNotas);
                 
                 notasListas.sort((a, b) => new Date(b.datos.date || 0) - new Date(a.datos.date || 0));
 
-                contenedor.innerHTML = `
-                    <div class="disclaimer-box">
-                        <img src="red_rainbow_perfil.jpg" alt="Perfil Red Rainbow" class="disclaimer-img">
-                        <p class="disclaimer-text">
-                            El contenido presentado en esta sección es producto de investigación y recopilación de diversas fuentes informativas. No obstante, es fundamental señalar que las opiniones, temas y datos compartidos en este espacio no reflejan necesariamente la postura oficial de NOTKOMO NETWORKS, Angel Curiosidades o Angel Cruger. El material se distribuye con fines exclusivamente informativos y educativos. A pesar de los esfuerzos por garantizar la precisión, pueden existir discrepancias entre las fuentes consultadas o variaciones en los puntos de vista expuestos. Si desea utilizar esta información como referencia confiable, se requiere la mención explícita al sitio de obtención y el contraste riguroso de los datos. Todas las imágenes, marcas comerciales o personales, logotipos y demás material visual corresponden a sus respectivos titulares; se utilizan únicamente a manera de contenido ilustrativo o informativo y no implican respaldo por parte de sus dueños. Todos los derechos reservados. Portal creado desde 2015. La información presentada podría haber cambiado ligeramente desde la exportación de los datos iniciales (cronología de publicación original).
-                        </p>
-                    </div>
-                ` + notasListas.map(nota => {
+                // Insertar el disclaimer AL PRINCIPIO y luego las notas
+                contenedor.innerHTML = disclaimerHtml + notasListas.map(nota => {
                     const fecha = new Date(nota.datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
                     const resumen = nota.cuerpo.replace(/[#_*`>\[\]]/g, '').substring(0, 160) + '...';
                     
@@ -340,7 +358,7 @@
                 }).join('');
 
             } catch (error) {
-                contenedor.innerHTML = '<div style="text-align: center; color: #ff4d4d; border: 1px solid rgba(255,0,0,0.2); padding: 30px;">[ ERROR AL CARGAR LAS NOTAS ]</div>';
+                contenedor.innerHTML = disclaimerHtml + '<div style="text-align: center; color: #ff4d4d; border: 1px solid rgba(255,0,0,0.2); padding: 30px;">[ ERROR AL CARGAR LAS NOTAS ]</div>';
             }
         }
 
