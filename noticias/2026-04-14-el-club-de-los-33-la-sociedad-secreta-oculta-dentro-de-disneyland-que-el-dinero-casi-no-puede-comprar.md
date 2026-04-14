@@ -1,7 +1,7 @@
 ---
 title: 'EL CLUB DE LOS 33: La sociedad secreta oculta dentro de Disneyland que el dinero (casi) no puede comprar'
 date: 2025-12-19T18:02:00
-image: ''
+image: /images/1766186282649027-0.png
 ---
 
 Imagina que estás caminando por Disneyland, rodeado de familias felices, comiendo churros y haciendo filas de dos horas. Mientras tú sudas bajo el sol, a solo unos metros de ti, hay una puerta discreta pintada de un tono especial de verde "anti-atención". Detrás de esa puerta, multimillonarios, celebridades y presidentes beben alcohol de 500 dólares la botella en un entorno victoriano, lejos de la "plebe".
