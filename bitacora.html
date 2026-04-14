@@ -9,24 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
     
     <style>
-        /* === ESTILOS INCRUSTADOS (MODIFICADOS) === */
+        /* === ESTILOS INCRUSTADOS === */
 
-        /* RESET DE ESPACIOS */
         body {
             margin: 0;
             padding: 0;
-            padding-top: 70px; /* Empuja el contenido bajo el menú fijo */
+            padding-top: 70px; 
         }
 
-        /* === 1. MENÚ (Fondo sólido oscuro) === */
+        /* === 1. MENÚ === */
         .top-menu { 
             position: fixed; top: 0; left: 0; width: 100%; height: 70px; display: flex; 
             justify-content: space-between; align-items: center; padding: 0 40px; 
-            background: #0a0f24; /* Color sólido oscuro */
+            background: #0a0f24; 
             border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 1000; box-sizing: border-box; 
         }
         .logo-link { text-decoration: none; display: flex; align-items: center; }
-        .logo-text { color: #fff; font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
+        .logo-text { color: #fff; font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; display: flex; align-items: center; }
+        .logo-divider { color: #555; margin: 0 15px; font-weight: 300; }
+        .logo-sub { color: #aaa; font-size: 0.9rem; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
         
         .menu-links { display: flex; gap: 30px; margin-right: 30px; }
         .nav-link { color: #aaa; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; transition: color 0.3s; }
@@ -50,83 +51,82 @@
         @media (max-width: 768px) {
             .menu-links { display: none; }
             .top-menu { padding: 0 20px; }
+            .logo-divider, .logo-sub { display: none; /* Oculta el texto extra en celular para no desbordar */ }
         }
 
-        /* === 2. CABECERA DE LA SECCIÓN (MODIFICADO) === */
+        /* === 2. CABECERA DE LA SECCIÓN === */
         .bitacora-header {
             position: relative; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             width: 100%;
-            padding: 80px 20px; 
-            margin-bottom: 50px; 
-            background: var(--bg-alt, #f8f9fa); /* Fondo claro por defecto */
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 40px 20px 20px 20px; /* Reducido drásticamente para eliminar espacio en blanco */
+            background: var(--bg-alt, #f8f9fa); 
             box-sizing: border-box; 
+            /* Se eliminó el border-bottom */
+        }
+        .header-content {
+            max-width: 1050px; /* Se alinea con el feed de notas */
+            margin: 0 auto;
         }
         .bitacora-header h1 {
             font-size: 2.8rem; 
-            color: #3E8BFF; /* Azul del botón de "seguir leyendo" */
+            color: #3E8BFF; 
             margin: 0;
             text-transform: uppercase; 
-            letter-spacing: 3px; 
+            letter-spacing: 2px; 
             font-weight: 800;
             line-height: 1.2;
-            text-align: center;
+            text-align: left; /* Alineado a la izquierda */
         }
-        /* NUEVO SUBTÍTULO */
         .bitacora-subtitle {
-            font-size: 1.1rem;
-            color: #3E8BFF; /* Mismo azul que el h1 */
-            margin: 15px 0 0 0;
-            text-align: center;
+            font-size: 0.8rem; /* Mucho más pequeño */
+            color: #666666; /* Color gris oscuro contrastante */
+            margin: 10px 0 0 0;
+            text-align: left; /* Alineado a la izquierda */
             font-weight: 400;
-            max-width: 800px;
             line-height: 1.6;
+            max-width: 800px;
         }
 
-        /* === 3. CAJA DE DISCLAIMER (MODIFICADO - Estilo banner/cita) === */
+        /* === 3. CAJA DE DISCLAIMER === */
         .disclaimer-box {
             display: flex;
             align-items: center; 
-            gap: 40px; 
-            background: #0a0f24; /* Fondo oscuro del menú */
-            border: 1px solid rgba(62,139,255,0.1); /* Borde azul tenue */
+            gap: 30px; 
+            background: #0a0f24; 
+            border: 1px solid rgba(62,139,255,0.1); 
             border-radius: 8px;
-            padding: 40px; 
-            margin-bottom: 50px;
+            padding: 30px; /* Un poco menos de padding para hacerlo más esbelto */
+            margin-bottom: 40px; /* Menos margen inferior */
             box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
         }
-        /* IMAGEN MÁS GRANDE */
         .disclaimer-img {
-            width: 220px; /* Tamaño mucho más grande */
-            height: 220px;
+            width: 200px; 
+            height: 200px;
             border-radius: 8px;
             object-fit: cover;
             flex-shrink: 0;
             border: 1px solid rgba(62,139,255,0.2); 
         }
-        /* TEXTO MÁS PEQUEÑO Y CLARO (Estilo cita) */
         .disclaimer-text {
-            color: #aaa; /* Gris claro para contraste con fondo oscuro */
-            font-size: 0.8rem; /* Tamaño más pequeño */
-            line-height: 1.8;
+            color: #aaa; 
+            font-size: 0.7rem; /* Reducido en un par de puntos, estilo nota legal/informativa */
+            line-height: 1.6;
             text-align: justify;
             margin: 0;
             padding-left: 20px; 
-            border-left: 2px solid #3E8BFF; /* Borde lateral estilo cita */
+            border-left: 2px solid #3E8BFF; 
         }
 
         @media (max-width: 768px) {
-            .disclaimer-box { flex-direction: column; text-align: center; padding: 25px; gap: 20px; }
+            .disclaimer-box { flex-direction: column; text-align: center; padding: 20px; gap: 20px; }
             .disclaimer-text { text-align: center; border-left: none; padding-left: 0; }
-            .disclaimer-img { width: 150px; height: 150px; } 
+            .disclaimer-img { width: 140px; height: 140px; } 
+            .bitacora-header h1 { font-size: 2rem; }
         }
 
-        /* === 4. BLOQUE DE NOTAS (Resto de la página) === */
-        .feed-container { display: block; max-width: 900px; margin: 0 auto 80px auto; padding: 0 20px; }
+        /* === 4. BLOQUE DE NOTAS === */
+        /* Contenedor estirado a 1050px */
+        .feed-container { display: block; max-width: 1050px; margin: 0 auto 80px auto; padding: 0 20px; }
         
         .nota-card {
             display: flex;
@@ -185,7 +185,11 @@
 
     <nav class="top-menu">
         <a href="index.html" class="logo-link">
-            <span class="logo-text">NOTKOMO <span style="font-weight: 300;">NETWORKS</span></span>
+            <span class="logo-text">
+                NOTKOMO <span style="font-weight: 300; margin-left: 5px;">NETWORKS</span>
+                <span class="logo-divider">|</span>
+                <span class="logo-sub">Angel Curiosidades</span>
+            </span>
         </a>
         
         <div style="display: flex; align-items: center;">
@@ -219,8 +223,10 @@
     </aside>
 
     <div class="bitacora-header">
-        <h1>SECCIÓN DE NOTAS Y PUBLICACIONES</h1>
-        <p class="bitacora-subtitle">En esta sección usted encontrará nuestras notas más recientes ordenadas cronológicamente según nuestro repositorio, extraídas de Facebook, Blogger, Wiki y otros espacios donde Angel Curiosidades está presente (incluyendo redes sociales).</p>
+        <div class="header-content">
+            <h1>SECCIÓN DE NOTAS Y PUBLICACIONES</h1>
+            <p class="bitacora-subtitle">En esta sección usted encontrará nuestras notas más recientes ordenadas cronológicamente según nuestro repositorio, extraídas de Facebook, Blogger, Wiki y otros espacios donde Angel Curiosidades está presente (incluyendo redes sociales).</p>
+        </div>
     </div>
 
     <main class="feed-container" id="feed-noticias">
@@ -258,7 +264,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const notaABrir = urlParams.get('nota');
 
-        // Texto del disclaimer (mismo que antes, solo cambia el estilo)
         const disclaimerHtml = `
             <div class="disclaimer-box">
                 <img src="red_rainbow_perfil.jpg" alt="Perfil Red Rainbow" class="disclaimer-img">
@@ -295,13 +300,11 @@
                 archivos = archivos.filter(arch => arch.name.endsWith('.md'));
 
                 if (archivos.length === 0) {
-                    // Contenedor solo para el disclaimer si no hay notas
                     contenedor.innerHTML = disclaimerHtml + '<div style="text-align: center; color: #3E8BFF;">[ NO HAY NOTAS AÚN ]</div>';
                     return;
                 }
 
                 if (notaABrir) {
-                    // Abrir una nota individual
                     const archivoSeleccionado = archivos.find(a => a.name === notaABrir);
                     if(archivoSeleccionado) {
                         const resNota = await fetch(archivoSeleccionado.download_url + `?t=${new Date().getTime()}`);
@@ -326,13 +329,11 @@
                     }
                 }
 
-                // Cargar todas las notas como tarjetas
                 const promesasNotas = archivos.map(arch => fetch(arch.download_url + `?t=${new Date().getTime()}`).then(r => r.text()).then(t => ({ nombre: arch.name, ...parsearNota(t) })));
                 const notasListas = await Promise.all(promesasNotas);
                 
                 notasListas.sort((a, b) => new Date(b.datos.date || 0) - new Date(a.datos.date || 0));
 
-                // Insertar el disclaimer AL PRINCIPIO y luego las notas
                 contenedor.innerHTML = disclaimerHtml + notasListas.map(nota => {
                     const fecha = new Date(nota.datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
                     const resumen = nota.cuerpo.replace(/[#_*`>\[\]]/g, '').substring(0, 160) + '...';
