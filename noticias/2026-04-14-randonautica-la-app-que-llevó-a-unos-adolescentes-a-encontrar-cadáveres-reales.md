@@ -1,7 +1,7 @@
 ---
 title: 'RANDONAUTICA: La App que llevó a unos adolescentes a encontrar cadáveres reales'
 date: 2025-12-18T17:00:00
-image: ''
+image: /images/1766152546562369-0.png
 ---
 
 ¿Puede una aplicación leer tu mente y llevarte a lo que estás pensando? ¿O es posible que la mente humana pueda influir en la tecnología para revelar secretos oscuros? Hay varios casos, el más asociado es este pero, si llegas hasta el final tenemos datos adicionales.
