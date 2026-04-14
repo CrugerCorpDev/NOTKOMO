@@ -3,301 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Oficial | NOTKOMO NETWORKS</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    <title>Bitácora de Notas | NOTKOMO NETWORKS</title>
+    <link rel="icon" type="image/png" href="red_rainbow_perfil.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
-        /* === RESET DE ESPACIOS PARA EVITAR COLISIONES === */
+        :root {
+            --primary-color: #3E8BFF;
+            --bg-dark: #0a0a0a;
+            --bg-alt: #16161a;
+            --bg-alt-alt: #E80000;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --text-main: #FFFFFF;
+            --text-muted: #A0AAB5;
+        }
+
         body {
-            margin: 0;
-            padding: 0;
-            padding-top: 70px; /* Esto empuja TODA la página hacia abajo para librar el menú fijo */
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden;
         }
 
-        /* === 1. BLOQUE DEL MENÚ (Fondo sólido, sin translucidez) === */
-        .top-menu { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 70px; display: flex; 
-            justify-content: space-between; align-items: center; padding: 0 40px; 
-            background: #0a0f24; /* Color sólido oscuro */
-            border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 1000; box-sizing: border-box; 
+        /* === HEADER ESTILO BLOGGER === */
+        header {
+            padding: 15px 30px; display: flex; justify-content: flex-end; align-items: center;
+            border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 100; box-sizing: border-box; background: rgba(10, 10, 10, 0.85);
         }
-        .logo-link { text-decoration: none; display: flex; align-items: center; }
-        .logo-text { color: #fff; font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
-        
-        .menu-links { display: flex; gap: 30px; margin-right: 30px; }
-        .nav-link { color: #aaa; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-link:hover, .nav-link.active { color: #3E8BFF; }
-        
-        .hamburger-btn { display: flex; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
-        .hamburger-btn span { display: block; width: 25px; height: 2px; background-color: #fff; transition: 0.3s; }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 1px; margin-left: 20px; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+        .menu-btn {
+            background: none; border: none; color: var(--text-main); font-size: 1.8rem;
+            cursor: pointer; margin-left: 30px; transition: color 0.3s; display: flex; align-items: center; padding: 0;
+        }
+        .menu-btn:hover { color: var(--primary-color); }
 
-        /* === MENÚ LATERAL === */
-        .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: #0b1120; z-index: 2000; transition: right 0.4s ease; border-left: 1px solid rgba(62,139,255,0.1); padding: 40px 20px; box-sizing: border-box; }
-        .side-menu.open { right: 0; }
-        .side-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1500; display: none; }
-        .side-menu-overlay.show { display: block; }
-        .close-menu-btn { position: absolute; top: 20px; right: 25px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
-        .side-nav-list { list-style: none; padding: 0; margin-top: 40px; }
-        .side-nav-list li { margin-bottom: 20px; }
-        .side-nav-list a { color: #aaa; text-decoration: none; font-size: 1rem; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
-        .side-nav-list a:hover { color: #3E8BFF; }
-        .side-menu-title { color: #3E8BFF; font-family: monospace; font-size: 0.85rem; letter-spacing: 3px; border-bottom: 1px solid rgba(62,139,255,0.2); padding-bottom: 10px; margin-bottom: 20px; }
-
-        @media (max-width: 768px) {
-            .menu-links { display: none; }
-            .top-menu { padding: 0 20px; }
+        /* === MURO DE NOTICIAS (FEED) === */
+        .muro-header {
+            padding: 120px 20px 30px 20px; text-align: left; max-width: 1200px; margin: 0 auto;
         }
 
-        /* === 2. BLOQUE DE LA CABECERA (Espacio reservado y rígido) === */
-        .bitacora-header {
-            position: relative; /* Fuerza a que respete el flujo normal del documento */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 60px 20px; 
-            margin-bottom: 50px; /* Separación estricta con las notas */
-            background: var(--bg-alt, #0b1120); /* Color de respaldo */
-            border-bottom: 1px solid rgba(62,139,255,0.2);
-            box-sizing: border-box; /* Evita que el padding rompa el ancho */
-        }
-        .bitacora-header h1 {
-            font-size: 2.5rem; 
-            color: #3E8BFF; /* Forzamos el color por si falla la variable */
-            margin: 0 0 10px 0;
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-weight: 800;
-            line-height: 1.2;
+        /* Cambiado a Rojo Institucional según instrucción */
+        .muro-header h1 {
+            font-size: 2.2rem; margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            color: #E80000;
         }
 
-        /* === 3. BLOQUE DE NOTAS === */
-        .feed-container { display: block; max-width: 900px; margin: 0 auto 80px auto; padding: 0 20px; }
-        
-        .nota-card {
-            display: flex;
-            align-items: flex-start;
-            background: var(--bg-alt);
-            border: 1px solid rgba(62, 139, 255, 0.2);
+        /* === NUEVOS ESTILOS PARA LA CABECERA FIJA DE LA SECCIÓN === */
+        .disclaimer-container {
+            max-width: 1000px;
+            margin: 0 auto 40px 20px; /* Separación abajo y match padding lateral */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--glass-border);
             border-radius: 8px;
-            padding: 20px; 
-            gap: 25px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: transform 0.3s;
+            display: flex;
+            align-items: flex-start; /* Alinear arriba */
+            gap: 20px;
+            align-self: flex-start; /* No estirar en flex main */
         }
-        .nota-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(62, 139, 255, 0.15); }
-        
-        .nota-img-container {
-            width: 220px; 
-            height: 160px;
-            flex-shrink: 0; 
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid rgba(62, 139, 255, 0.1);
-            background: #1a2a40;
-        }
-        .nota-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        
-        .nota-info {
-            flex-grow: 1; display: flex; flex-direction: column; min-height: 160px; 
-        }
-        
-        .nota-fecha { color: #00B4D8; font-family: monospace; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
-        .nota-titulo { font-size: 1.4rem; color: var(--text-main); margin-top: 0; margin-bottom: 10px; font-weight: 800; line-height: 1.3; }
-        .nota-resumen { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0; }
-        
-        .btn-leer {
-            align-self: flex-end; margin-top: auto;
-            background: linear-gradient(135deg, #3E8BFF, #00B4D8);
-            color: white; padding: 8px 20px; text-decoration: none; border-radius: 4px;
-            font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; border: none;
-        }
-        .btn-leer:hover { box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3); }
 
-        .nota-completa { background: var(--bg-alt); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
-        .nota-completa img { max-width: 100%; height: auto; border-radius: 6px; margin: 30px 0; }
-        .btn-volver { display: inline-block; margin-bottom: 25px; color: var(--primary-color); text-decoration: none; font-weight: bold; font-family: monospace; letter-spacing: 1px; }
+        .disclaimer-img {
+            width: 100px;
+            height: 100px; /* Cuadrada */
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0; /* No aplastar imagen */
+            border: 1px solid var(--glass-border);
+        }
+
+        .disclaimer-text {
+            font-size: 0.8rem; /* Pequeño */
+            color: var(--text-muted); /* Color tenue (gris) */
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0;
+        }
+
+        .main-content-fluid {
+            display: flex; flex-direction: column; padding: 20px; box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        #contenedor-noticias {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; width: 100%;
+        }
+
+        /* Tarjetas del Feed */
+        .nota-card {
+            background: var(--bg-alt); border: 1px solid var(--glass-border);
+            border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s;
+            display: flex; flex-direction: column; text-decoration: none; color: inherit;
+        }
+        .nota-card:hover { transform: translateY(-5px); border-color: rgba(62, 139, 255, 0.3); }
+
+        .nota-img {
+            width: 100%; height: 160px; object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nota-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .nota-content h2 {
+            font-size: 1.1rem; color: #FFF; margin: 0 0 10px 0; line-height: 1.4;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .nota-content .fecha {
+            font-family: monospace; font-size: 0.8rem; color: var(--primary-color);
+            margin-bottom: 15px; display: block;
+        }
+        .nota-content p {
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
 
         @media (max-width: 768px) {
-            .nota-card { flex-direction: column; padding: 15px; gap: 15px; }
-            .nota-img-container { width: 100%; height: auto; aspect-ratio: 16/9; }
-            .nota-info { min-height: auto; }
-            .btn-leer { margin-top: 15px; align-self: stretch; text-align: center; }
+            .nav-links { display: none; }
+            #contenedor-noticias { grid-template-columns: 1fr; }
+            .muro-header h1 { font-size: 1.8rem; }
+            .disclaimer-container { flex-direction: column; align-items: center; text-align: center; margin-left: 0; margin-right: 0;}
+            .disclaimer-img { margin-bottom: 15px; }
+            .disclaimer-text { text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="top-menu">
-        <a href="index.html" class="logo-link">
-            <span class="logo-text">NOTKOMO <span style="font-weight: 300;">NETWORKS</span></span>
-        </a>
-        
-        <div style="display: flex; align-items: center;">
-            <div class="menu-links">
-                <a href="index.html" class="nav-link">INICIO</a>
-                <a href="bitacora.html" class="nav-link active">NOTICIAS</a>
-                <a href="angel-cruger.html" class="nav-link">ANGEL CRUGER</a>
-            </div>
-            <button class="hamburger-btn" aria-label="Abrir menú" onclick="toggleMobileMenu()">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="menu-placeholder"></div>
+    <script>
+        // Cargar menú simple si menu.js no está (para entorno local)
+        fetch('menu.js')
+            .then(response => {
+                if (!response.ok) {
+                    document.getElementById('menu-placeholder').innerHTML = `
+                        <header>
+                            <nav class="nav-links">
+                                <a href="index.html">Inicio</a>
+                                <a href="america_latina.html">América Latina</a>
+                                <a href="privacidad.html">Aviso de Privacidad</a>
+                            </nav>
+                            <button class="menu-btn">☰</button>
+                        </header>
+                    `;
+                }
+            });
+    </script>
+    <script src="menu.js"></script>
 
-    <div class="side-menu-overlay" id="side-overlay" onclick="toggleMobileMenu()"></div>
-    <aside class="side-menu" id="side-menu">
-        <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="Cerrar menú">×</button>
-        <div class="side-menu-content">
-            <h3 class="side-menu-title">DIRECTORIO</h3>
-            <ul class="side-nav-list">
-                <li><a href="index.html">Página Principal</a></li>
-                <li><a href="bitacora.html">Bitácora de Notas</a></li>
-                <li><a href="angel-cruger.html">Angel Cruger</a></li>
-                <li><a href="angel-curiosidades.html">Angel Curiosidades</a></li>
-                <li><a href="gdm.html">God, Devil and Me</a></li>
-                <li><a href="red-rainbow.html">Red Rainbow</a></li>
-                <li><a href="fundacion-dws.html">Fundación DWS</a></li>
-                <li><a href="movail.html">Movail</a></li>
-            </ul>
-        </div>
-    </aside>
+    <section class="muro-header">
+        <h1>SECCIÓN DE NOTAS Y PUBLICACIONES</h1>
+    </section>
 
-    <div class="bitacora-header">
-        <h1>BITÁCORA DE NOTAS</h1>
-        <p style="font-family: monospace; color: #aaa; margin: 0; letter-spacing: 2px;">[ REGISTRO DATABANK ]</p>
-    </div>
+    <main class="main-content-fluid">
 
-    <main class="feed-container" id="feed-noticias">
-        <div style="padding: 40px 20px; color: var(--text-main); background: var(--bg-alt); border: 1px solid rgba(62,139,255,0.1); border-radius: 8px;">
-            <h2 style="color: var(--primary-color); margin-top: 0;">Repositorio y Archivo de Noticias</h2>
-            <p style="line-height: 1.8; color: var(--text-muted);">
-                Bienvenido a la bitácora oficial de <strong>Angel Cruger</strong> y el archivo documental de <strong>NOTKOMO Networks</strong>. En esta sección recopilamos nuestras últimas investigaciones, notas sobre tecnología, curiosidades, misterios, arte digital y comunicados oficiales de la firma. 
+        <div class="disclaimer-container">
+            <img src="red_rainbow_perfil.jpg" alt="Perfil Red Rainbow" class="disclaimer-img">
+            <p class="disclaimer-text">
+                El contenido presentado en esta sección es producto de investigación y recopilación de diversas fuentes informativas. No obstante, es fundamental señalar que las opiniones, temas y datos compartidos en este espacio no reflejan necesariamente la postura oficial de NOTKOMO NETWORKS, Angel Curiosidades o Angel Cruger. El material se distribuye con fines exclusivamente informativos y educativos. A pesar de los esfuerzos por garantizar la precisión, pueden existir discrepancias entre las fuentes consultadas o variaciones en los puntos de vista expuestos. Si desea utilizar esta información como referencia confiable, se requiere la mención explícita al sitio de obtención y el contraste riguroso de los datos. Todas las imágenes, marcas comerciales o personales, logotipos y demás material visual corresponden a sus respectivos titulares; se utilizan únicamente a manera de contenido ilustrativo o informativo y no implican respaldo por parte de sus dueños. Todos los derechos reservados. Portal creado desde 2015. La información presentada podría haber cambiado ligeramente desde la exportación de los datos iniciales (cronología de publicación original).
             </p>
-            <p style="line-height: 1.8; color: var(--text-muted);">
-                Nuestro databank cuenta con decenas de artículos documentados que exploran desde la historia cibernética y la soberanía tecnológica, hasta anécdotas globales y expedientes de Angel Curiosidades. Todo el material escrito y audiovisual está protegido bajo los lineamientos de Cruger Corp.
-            </p>
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
-                <span style="color: #3E8BFF; font-family: monospace; font-size: 0.9rem; animation: pulse 1.5s infinite;">
-                    [ RECUPERANDO ENTRADAS DEL DATABANK... ]
-                </span>
-            </div>
+        </div>
+        <div id="contenedor-noticias">
+          <div style="text-align: center; padding: 50px; color: var(--text-muted); font-family: monospace;">
+              Conectando con la base de datos de NOTKOMO...
+          </div>
         </div>
     </main>
 
-    <footer style="padding: 60px 30px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 100px; background: var(--bg-alt);">
-        <p style="font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 <strong>NOTKOMO NETWORKS</strong>.<br><span style="opacity: 0.8;">Propiedad de Angel Cruger.</span>
-        </p>
+    <footer style="padding: 50px; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">
+        <p>© 2026 NOTKOMO NETWORKS. Todos los derechos reservados.</p>
+        <p style="opacity: 0.5;">Propiedad intelectual de Angel Cruger.</p>
     </footer>
 
-    <script>
-        function toggleMobileMenu() {
-            document.getElementById('side-menu').classList.toggle('open');
-            document.getElementById('side-overlay').classList.toggle('show');
-        }
+    <script src="noticias.js"></script>
 
-        const repo = "CrugerCorpDev/NOTKOMO";
-        const contenedor = document.getElementById('feed-noticias');
-        const urlParams = new URLSearchParams(window.location.search);
-        const notaABrir = urlParams.get('nota');
-
-        function parsearNota(textoMarkdown) {
-            const match = textoMarkdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-            if (!match) return { datos: {}, cuerpo: textoMarkdown };
-            
-            const datos = {};
-            match[1].split('\n').forEach(linea => {
-                const index = linea.indexOf(':');
-                if (index > -1) {
-                    let llave = linea.slice(0, index).trim();
-                    let valor = linea.slice(index + 1).trim();
-                    if(valor.startsWith('"') && valor.endsWith('"')) valor = valor.slice(1, -1);
-                    datos[llave] = valor;
-                }
-            });
-            return { datos, cuerpo: match[2] };
-        }
-
-        async function cargarBitacora() {
-            try {
-                const urlApi = `https://api.github.com/repos/${repo}/contents/noticias?t=${new Date().getTime()}`;
-                const respuestaLista = await fetch(urlApi);
-                if (!respuestaLista.ok) throw new Error("No hay notas");
-                
-                let archivos = await respuestaLista.json();
-                archivos = archivos.filter(arch => arch.name.endsWith('.md'));
-
-                if (archivos.length === 0) {
-                    contenedor.innerHTML = '<div style="text-align: center; color: var(--primary-color);">[ NO HAY NOTAS AÚN ]</div>';
-                    return;
-                }
-
-                if (notaABrir) {
-                    const archivoSeleccionado = archivos.find(a => a.name === notaABrir);
-                    if(archivoSeleccionado) {
-                        const resNota = await fetch(archivoSeleccionado.download_url + `?t=${new Date().getTime()}`);
-                        const texto = await resNota.text();
-                        const { datos, cuerpo } = parsearNota(texto);
-                        
-                        const fechaFormat = new Date(datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
-                        const imagenHero = datos.image ? `<img src="${datos.image.startsWith('/') ? datos.image : '/' + datos.image}" style="max-width: 100%; height: auto; max-height: 650px; display: block; margin: 0 auto 30px auto; border-radius: 6px; object-fit: contain;">` : '';
-
-                        contenedor.innerHTML = `
-                            <a href="bitacora.html" class="btn-volver">← VOLVER AL MURO</a>
-                            <article class="nota-completa">
-                                <span class="nota-fecha">${fechaFormat}</span>
-                                <h1 style="color:var(--primary-color); font-size: 2.5rem; margin-top:0;">${datos.title || 'Sin Título'}</h1>
-                                ${imagenHero}
-                                <div style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main); margin-top:30px;">
-                                    ${marked.parse(cuerpo)}
-                                </div>
-                            </article>
-                        `;
-                        return;
-                    }
-                }
-
-                const promesasNotas = archivos.map(arch => fetch(arch.download_url + `?t=${new Date().getTime()}`).then(r => r.text()).then(t => ({ nombre: arch.name, ...parsearNota(t) })));
-                const notasListas = await Promise.all(promesasNotas);
-                
-                // === ORDEN CRONOLÓGICO GARANTIZADO ===
-                notasListas.sort((a, b) => new Date(b.datos.date || 0) - new Date(a.datos.date || 0));
-
-                contenedor.innerHTML = notasListas.map(nota => {
-                    const fecha = new Date(nota.datos.date || Date.now()).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
-                    const resumen = nota.cuerpo.replace(/[#_*`>\[\]]/g, '').substring(0, 160) + '...';
-                    
-                    const rutaImagen = nota.datos.image ? (nota.datos.image.startsWith('/') ? nota.datos.image : '/' + nota.datos.image) : '';
-                    const boxImagen = rutaImagen 
-                        ? `<img src="${rutaImagen}" class="nota-img" alt="${nota.datos.title}">` 
-                        : `<div class="nota-img" style="display:flex; align-items:center; justify-content:center; color:white; font-family:monospace; font-size: 0.8rem;">SIN IMAGEN</div>`;
-
-                    return `
-                        <div class="nota-card">
-                            <div class="nota-img-container">
-                                ${boxImagen}
-                            </div>
-                            <div class="nota-info">
-                                <span class="nota-fecha">${fecha}</span>
-                                <h2 class="nota-titulo">${nota.datos.title || 'Nota sin título'}</h2>
-                                <p class="nota-resumen">${resumen}</p>
-                                <a href="?nota=${nota.nombre}" class="btn-leer">SEGUIR LEYENDO</a>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-            } catch (error) {
-                contenedor.innerHTML = '<div style="text-align: center; color: #ff4d4d; border: 1px solid rgba(255,0,0,0.2); padding: 30px;">[ ERROR AL CARGAR LAS NOTAS ]</div>';
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", cargarBitacora);
-    </script>
 </body>
 </html>
