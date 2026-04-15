@@ -1,7 +1,10 @@
+NOTKOMO NETWORKS es un repositorio personal.
+imágen: NOTKOMONETWORKS.png
+
 # NOTKOMO NETWORKS
 Repositorio y Databank Oficial | [notkomo.space](https://notkomo.space)
 
-Este repositorio almacena el código fuente, la bitácora y la base documental de los ecosistemas creativos y analíticos de Angel Cruger.
+Este repositorio almacena Notas, páginas y la base documental de los ecosistemas creativos y analíticos de Angel Cruger.
 
 ## Estructura del Proyecto
 * **Página Principal**: Portal de integración de proyectos (`index.html`).
