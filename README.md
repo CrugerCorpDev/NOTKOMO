@@ -3,6 +3,8 @@ imágen: NOTKOMONETWORKS.png
 
 # NOTKOMO NETWORKS
 Repositorio y Databank Oficial | [notkomo.space](https://notkomo.space)
+https://www.NOTKOMO.space
+https://NOTKOMO.space
 
 Este repositorio almacena Notas, páginas y la base documental de los ecosistemas creativos y analíticos de Angel Cruger.
 
