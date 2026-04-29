@@ -4,7 +4,7 @@ date: 2026-04-27T23:34:00
 image: /images/679435495_1635630145015704_7523375419340504729_n.jpg
 ---
 
-![✨](https://static.xx.fbcdn.net/images/emoji.php/v9/tf4/1/16/2728.png) ![😁](https://static.xx.fbcdn.net/images/emoji.php/v9/t4f/1/16/1f601.png) ALERTA DE SPOILER ![😁](https://static.xx.fbcdn.net/images/emoji.php/v9/t4f/1/16/1f601.png) ![✨](https://static.xx.fbcdn.net/images/emoji.php/v9/tf4/1/16/2728.png)
+ALERTA DE SPOILER  
 
 Varias de las películas de Nintendo han mostrado personajes de diferentes franquicias, y muchos especulan que se trata de la filtración del videojuego más amado por los fans, "SMASH", aunque en un principio creíamos que sería la primera versión, las recientes filtraciones y cameos nos dejan ver que estaríamos en terreno cercano al Melee, aunque con guiños a la siguiente generación. 
 
