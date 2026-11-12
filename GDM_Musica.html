@@ -35,6 +35,23 @@
             padding-bottom: 10px; margin-top: 50px; margin-bottom: 20px;
         }
 
+        .tracklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 10px 25px;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #551A8B;
+            padding: 20px 25px 20px 40px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .tracklist-grid li {
+            margin-bottom: 6px;
+            font-style: italic;
+            color: #222;
+        }
+
         @media (max-width: 768px) { .wiki-infobox, .img-float-left, .img-float-right { float: none; width: 100%; max-width: 100%; margin: 0 0 30px 0; box-sizing: border-box; } }
     </style>
 </head>
@@ -64,13 +81,20 @@
                 <div class="wiki-infobox-row"><div class="wiki-infobox-label">Actividad</div><div class="wiki-infobox-data">Desde 2020</div></div>
             </div>
 
-            <div class="wiki-toc" style="background: #f9f9f9; border: 1px solid #e0e0e0; border-left: 4px solid #551A8B; padding: 20px 25px; border-radius: 4px; margin: 30px 0; max-width: 420px;">
+            <div class="wiki-toc" style="background: #f9f9f9; border: 1px solid #e0e0e0; border-left: 4px solid #551A8B; padding: 20px 25px; border-radius: 4px; margin: 30px 0; max-width: 450px;">
                 <h2 style="margin-top: 0; font-size: 1rem; color: #333; text-transform: uppercase;">SUMARIO</h2>
                 <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li><a href="#produccion-musical" style="color: #0645ad; text-decoration: none;">1. Producción Musical</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#sello-spmp" style="color: #0645ad; text-decoration: none;">1. GDM: Sello de Producción Musical Personal (SPMP)</a></li>
+                    <li><a href="#produccion-musical" style="color: #0645ad; text-decoration: none;">2. Producción Musical</a></li>
                 </ul>
             </div>
             <div style="clear: both;"></div>
+
+            <h2 class="wiki-section-title" id="sello-spmp">GDM: Sello de Producción Musical Personal (SPMP)</h2>
+            <div class="clearfix">
+                <p><strong>GDM Música</strong> es la división sonora y <strong>Sello de Producción Musical Personal (SPMP)</strong> derivado del estudio y universo creativo <strong><a href="gdm.html" style="color: #551A8B; font-weight: 600; text-decoration: none;">God, Devil and Me</a></strong>, fundado y operado de manera independiente por <strong><a href="angel-cruger.html" style="color: #551A8B; font-weight: 600; text-decoration: none;">Angel Cruger</a></strong>. A diferencia de una disquera tradicional enfocada en la comercialización masiva, el modelo SPMP funciona como un laboratorio creativo autónomo diseñado para producir, resguardar y publicar obras musicales bajo control artístico absoluto.</p>
+                <p>Nacido en estrecha sinergia con <strong>OneSTUDIO</strong> y el ecosistema visual de GDM, este sello permite a Cruger integrar composición lírica, ejecución instrumental y diseño sonoro digital sin ataduras a fórmulas comerciales convencionales, sirviendo tanto para musicalizar proyectos audiovisuales propios como para lanzar producciones originales bajo su nombre artístico como solista.</p>
+            </div>
 
             <h2 class="wiki-section-title" id="produccion-musical">Producción Musical</h2>
             <div class="clearfix">
@@ -87,7 +111,7 @@
 
                 <br>
 
-                <p>Actualmente, Angel Cruger ha compartido un total de <strong>8 canciones inéditas</strong> y ha mencionado haber desarrollado en este tiempo un total de <strong>20 canciones propias terminadas</strong>, siendo una de las más emblemáticas de su álbum <strong><em>CINEBRA</em></strong>, que refleja un estilo propio marcado por una era del rock pesado y el grunge de principios de los 2010's.</p>
+                <p>Actualmente, Angel Cruger ha compartido un total de <strong>8 canciones inéditas</strong> y ha mencionado haber desarrollado en este tiempo un total de <strong>20 canciones propias terminadas</strong>, siendo una de las más emblemáticas la de su álbum <strong><em>CINEBRA</em></strong>, que refleja un estilo propio marcado por una era del rock pesado y el grunge de principios de los 2010's.</p>
 
                 <br>
 
@@ -103,7 +127,27 @@
 
                 <br>
 
-                <p>Entre las canciones que conforman su repertorio se encuentran: <em>Cinebra</em>, <em>Ante el falso Dios</em>, <em>De tu querer</em>, <em>Flor de metal</em>, <em>La ley de la gran ciudad</em>, <em>Luz que se dobla</em>, <em>Momentos</em>, <em>Rabia animal</em>, <em>Redes</em>, <em>Rencor y amor</em>, <em>Rey de la conciencia</em>, <em>Señor de las tormentas</em>, <em>Soy un errante</em>, <em>Trono de papel</em>, <em>Zodíaco</em>, <em>Estrellas en este Infierno</em>, <em>On the boulevard</em> y <em>The velvet cage</em>.</p>
+                <p>Entre las canciones que conforman su repertorio se encuentran:</p>
+                <ul class="tracklist-grid">
+                    <li>Cinebra</li>
+                    <li>Ante el falso Dios</li>
+                    <li>De tu querer</li>
+                    <li>Flor de metal</li>
+                    <li>La ley de la gran ciudad</li>
+                    <li>Luz que se dobla</li>
+                    <li>Momentos</li>
+                    <li>Rabia animal</li>
+                    <li>Redes</li>
+                    <li>Rencor y amor</li>
+                    <li>Rey de la conciencia</li>
+                    <li>Señor de las tormentas</li>
+                    <li>Soy un errante</li>
+                    <li>Trono de papel</li>
+                    <li>Zodíaco</li>
+                    <li>Estrellas en este Infierno</li>
+                    <li>On the boulevard</li>
+                    <li>The velvet cage</li>
+                </ul>
 
                 <br>
 
