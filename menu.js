@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="onestudios.html" ${isActive('onestudios.html')}>► ONESTUDIOS</a>
             <a href="angel-cruger.html" ${isActive('angel-cruger.html')}>► Angel Cruger</a>
             <a href="gdm.html" ${isActive('gdm.html')}>► God, Devil and Me</a>
+            <a href="GDM_Musica.html" ${isActive('GDM_Musica.html')}>► GDM Música</a>
             <a href="red-rainbow.html" ${isActive('red-rainbow.html')}>► Red Rainbow</a>
             <a href="fundacion-dws.html" ${isActive('fundacion-dws.html')}>► Fundación DWS</a>
             <a href="movail.html" ${isActive('movail.html')}>► MOVAIL</a>
